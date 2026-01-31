@@ -4,6 +4,7 @@ public class ShootController : MonoBehaviour
 {
     [SerializeField] private string targetTag = "Target";
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameController gameController;
     void Start()
     {
         if (mainCamera == null)
@@ -16,6 +17,7 @@ public class ShootController : MonoBehaviour
         // Check for left mouse button click using new Input System
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
+            if (ZoomController.Zoom0 == true) return;
             HandleClick();
         }
 
@@ -40,6 +42,7 @@ public class ShootController : MonoBehaviour
         else
         {
             OnWrongTagOrMissClicked();
+            gameController.lives = 0;
         }
     }
     void OnCorrectTagClicked(GameObject clickedObject)

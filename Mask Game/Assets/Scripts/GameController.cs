@@ -2,12 +2,13 @@
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     [Header("References")]
     public TextController textController;
-    public SpawnCultistControl cultistSpawner;
+    public SpawnCultistControl_layers cultistSpawner;
 
     [Header("Game State")]
     public int lives = 3;
@@ -41,6 +42,14 @@ public class GameController : MonoBehaviour
 
         // Limpiar todos los textos al inicio
         ClearHistoryDisplay();
+    }
+    private void Update()
+    {
+        // CONSECUENCIA: Si se acaban las vidas
+        if (lives <= 0)
+        {
+            GameOver();
+        }
     }
 
     public void VerifyAnswer(int categoryIndex, int answerIndex)
@@ -127,12 +136,6 @@ public class GameController : MonoBehaviour
 
         Debug.Log($"✗ {message}");
         Debug.Log($"Vidas restantes: {lives}");
-
-        // CONSECUENCIA: Si se acaban las vidas
-        if (lives <= 0)
-        {
-            GameOver();
-        }
     }
 
     private void AddToHistory(string message)
@@ -183,6 +186,7 @@ public class GameController : MonoBehaviour
         Debug.Log("═══════════════════════════════");
 
         // Aquí más adelante añadirás: cargar escena, pausar juego, etc.
+        SceneManager.LoadScene("GameOver");
     }
 
     // Método público para obtener el historial completo (por si lo necesitas)

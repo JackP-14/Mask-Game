@@ -7,18 +7,20 @@ public class ZoomController : MonoBehaviour
     public Camera MainCam;
     public Transform Crosshair;
     public GameObject Zoom0Wall;
+    public SpriteRenderer wall_spriteRenderer;
     public GameObject Zoom2CameraController;
     public static bool Zoom0 = true;
     public static bool Zoom1 = false;
     public static bool Zoom2 = false;
     [Header("Hud and Fade Out")]
     public GameObject hud;
-    public SpriteRenderer hud_spriteRenderer;
+    //public SpriteRenderer hud_spriteRenderer;
     public GameObject cross;
-    float fadeDuration = 1.0f;
+    public float fadeDuration = 1.0f;
     void Start()
     {
-        hud_spriteRenderer = hud.GetComponent<SpriteRenderer>();
+        //hud_spriteRenderer = hud.GetComponent<SpriteRenderer>();
+        wall_spriteRenderer = Zoom0Wall.GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -35,8 +37,8 @@ public class ZoomController : MonoBehaviour
                 Zoom0 = false;
                 Debug.Log("Zoom0 Off");
                 Debug.Log("Zoom1 On");
-                Zoom0Wall.SetActive(false);
-                //FadeOut(hud_spriteRenderer, hud, fadeDuration);
+                //Zoom0Wall.SetActive(false);
+                FadeOut(wall_spriteRenderer, Zoom0Wall, fadeDuration);
                 hud.SetActive(false);
                 cross.SetActive(true);
 
@@ -75,6 +77,10 @@ public class ZoomController : MonoBehaviour
                 Debug.Log("Zoom1 Off");
                 Debug.Log("Zoom0 On");
                 Zoom0Wall.SetActive(true);
+                { 
+                Color color = wall_spriteRenderer.color;
+                wall_spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
+                }
                 hud.SetActive(true);
                 cross.SetActive(false);
 
