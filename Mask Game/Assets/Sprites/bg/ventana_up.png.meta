@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 78316ba5d8fe86b4f90ac4eddff90a1c
+guid: 5c6766c0a421efe4e9a25b52aaa9755e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6300654922055607269
-    second: yo que se intro ig_0
+      213: -2996356125499644760
+    second: ventana_up_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: yo que se intro ig_0
+      name: ventana_up_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5e3e071f44c607750800000000000000
-      internalID: 6300654922055607269
+      spriteID: 8a4270faafdca66d0800000000000000
+      internalID: -2996356125499644760
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      yo que se intro ig_0: 6300654922055607269
+      ventana_up_0: -2996356125499644760
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

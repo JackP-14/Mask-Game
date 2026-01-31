@@ -20,7 +20,7 @@ public class ZoomController : MonoBehaviour
     void Start()
     {
         //hud_spriteRenderer = hud.GetComponent<SpriteRenderer>();
-        wall_spriteRenderer = Zoom0Wall.GetComponent<SpriteRenderer>();
+        //wall_spriteRenderer = Zoom0Wall.GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -37,8 +37,8 @@ public class ZoomController : MonoBehaviour
                 Zoom0 = false;
                 Debug.Log("Zoom0 Off");
                 Debug.Log("Zoom1 On");
-                //Zoom0Wall.SetActive(false);
-                FadeOut(wall_spriteRenderer, Zoom0Wall, fadeDuration);
+                Zoom0Wall.SetActive(false);
+                //FadeOut(wall_spriteRenderer, Zoom0Wall, fadeDuration);
                 hud.SetActive(false);
                 cross.SetActive(true);
 
@@ -78,8 +78,8 @@ public class ZoomController : MonoBehaviour
                 Debug.Log("Zoom0 On");
                 Zoom0Wall.SetActive(true);
                 { 
-                Color color = wall_spriteRenderer.color;
-                wall_spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
+                //Color color = wall_spriteRenderer.color;
+                //wall_spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
                 }
                 hud.SetActive(true);
                 cross.SetActive(false);
