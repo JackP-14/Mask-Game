@@ -468,6 +468,7 @@ MonoBehaviour:
   MainCam: {fileID: 0}
   Crosshair: {fileID: 0}
   Zoom0Wall: {fileID: 0}
+  Zoom2CameraController: {fileID: 0}
 --- !u!4 &721463972
 Transform:
   m_ObjectHideFlags: 0
