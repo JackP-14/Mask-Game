@@ -1568,6 +1568,7 @@ MonoBehaviour:
   Zoom0Wall: {fileID: 854579029}
   Zoom2CameraController: {fileID: 944381131}
   hud: {fileID: 0}
+  hud_spriteRenderer: {fileID: 0}
   cross: {fileID: 1117265850}
 --- !u!4 &1106001921
 Transform:
