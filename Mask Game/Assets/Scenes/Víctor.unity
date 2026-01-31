@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf024743638aa74f8d0741afc6633a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Cultist: {fileID: 8043306391914083526, guid: 31646b4da109b3d4bb92f70032b6edcb, type: 3}
+  Cultist: {fileID: 8043306391914083526, guid: 2a9c0a6ed3067e64f95327bd0bb6c10f, type: 3}
   MaxCultists: 20
   MinCultists: 10
 --- !u!1 &1308503273
