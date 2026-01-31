@@ -21,21 +21,24 @@ public class CultistRandomSpawn : MonoBehaviour
 
     public void Spawn_cultist()
     {
-        int SpawnPointX = Random.Range(-4, 3);
+        float SpawnPointX = 0f;
+        float SpawnPointY = 0f;
         int SpawnLvlY = Random.Range(0, 3);
-        int SpawnPointY = 0;
 
         if (SpawnLvlY == 0)
         {
-            SpawnPointY = -3;
+            SpawnPointY = -3f;
+            SpawnPointX = Random.Range(-4.6f, 4.3f);
         }
         else if (SpawnLvlY == 1)
         {
-            SpawnPointY = -1;
+            SpawnPointY = -1f;
+            SpawnPointX = Random.Range(-4.6f, 5.3f);
         }
         else
         {
-            SpawnPointY = 1;
+            SpawnPointY = 1f;
+            SpawnPointX = Random.Range(-4.6f, 3.4f);
         }
 
         Vector2 SpawnPosition = new Vector2(SpawnPointX, SpawnPointY);
