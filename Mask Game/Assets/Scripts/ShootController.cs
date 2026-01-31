@@ -33,17 +33,11 @@ public class ShootController : MonoBehaviour
             if (hit.collider.CompareTag(targetTag))
             {
                 OnCorrectTagClicked(hit.collider.gameObject);
-            }
-            else
-            {
-                OnWrongTagOrMissClicked();
+                return;
             }
         }
-        else
-        {
-            OnWrongTagOrMissClicked();
-            gameController.lives = 0;
-        }
+        OnWrongTagOrMissClicked();
+        gameController.lives = 0;
     }
     void OnCorrectTagClicked(GameObject clickedObject)
     {

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a034bba3f9fab3144b13c9da860f0b7a
+guid: 9a91528c16b607e49af18e39842e0c83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5837386884166476338
-    second: roofsmall_0
+      213: 3667054528505570668
+    second: balcony_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roofsmall_0
+      name: balcony_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2380
         y: 0
-        width: 1512
-        height: 2173
+        width: 1128
+        height: 2480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ecd9bb08e8f6dfea0800000000000000
-      internalID: -5837386884166476338
+      spriteID: c65ef8f2aaef3e230800000000000000
+      internalID: 3667054528505570668
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      roofsmall_0: -5837386884166476338
+      balcony_0: 3667054528505570668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
