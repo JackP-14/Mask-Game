@@ -90,4 +90,9 @@ public class CultistRandomSpawn : MonoBehaviour
             spawnedCultists.Add(randomizer);
         }
     }
+
+    public CultistRandomizer GetTargetCultist()
+    {
+        return targetCultist;
+    }
 }
