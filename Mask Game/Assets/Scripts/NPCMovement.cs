@@ -8,10 +8,13 @@ public class NPCMovement : MonoBehaviour
     float speed;
     int direction=-1;
 
+    [Header("How many seconds pass between movement checks")]
+    public float checktime;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InvokeRepeating("walkQuestion", 2f, 2f);
+        InvokeRepeating("walkQuestion", 2f, checktime);
     }
 
     // Update is called once per frame

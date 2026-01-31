@@ -1200,6 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  checktime: 2
 --- !u!114 &-7904927067809509491
 MonoBehaviour:
   m_ObjectHideFlags: 0
