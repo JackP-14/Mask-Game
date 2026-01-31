@@ -10,6 +10,9 @@ public class ZoomController : MonoBehaviour
     public static bool Zoom0 = true;
     public static bool Zoom1 = false;
     public static bool Zoom2 = false;
+    public GameObject hud;
+    public GameObject cross;
+
     void Update()
     {
         //Vector3 mousePos = Mouse.current.position.ReadValue();
@@ -26,6 +29,8 @@ public class ZoomController : MonoBehaviour
                 Debug.Log("Zoom0 Off");
                 Debug.Log("Zoom1 On");
                 Zoom0Wall.SetActive(false);
+                hud.SetActive(false);
+                cross.SetActive(true);
 
             }
             else if (Zoom0 == false && Zoom1 == true)
@@ -34,7 +39,9 @@ public class ZoomController : MonoBehaviour
                 Zoom2 = true;
                 Debug.Log("Zoom1 Off");
                 Debug.Log("Zoom2 On");
-                
+                hud.SetActive(false);
+                cross.SetActive(true);
+
                 Crosshair.localScale = Crosshair.localScale / 5;
                 Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
                 Vector3 mouseWorldPos = MainCam.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, MainCam.nearClipPlane));
@@ -60,6 +67,8 @@ public class ZoomController : MonoBehaviour
                 Debug.Log("Zoom1 Off");
                 Debug.Log("Zoom0 On");
                 Zoom0Wall.SetActive(true);
+                hud.SetActive(true);
+                cross.SetActive(false);
 
             }
             else if (Zoom1 == false && Zoom2 == true)
