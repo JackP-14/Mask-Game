@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class ZoomController : MonoBehaviour
 {
@@ -10,9 +11,15 @@ public class ZoomController : MonoBehaviour
     public static bool Zoom0 = true;
     public static bool Zoom1 = false;
     public static bool Zoom2 = false;
+    [Header("Hud and Fade Out")]
     public GameObject hud;
+    public SpriteRenderer hud_spriteRenderer;
     public GameObject cross;
-
+    float fadeDuration = 1.0f;
+    void Start()
+    {
+        hud_spriteRenderer = hud.GetComponent<SpriteRenderer>();
+    }
     void Update()
     {
         //Vector3 mousePos = Mouse.current.position.ReadValue();
@@ -29,6 +36,7 @@ public class ZoomController : MonoBehaviour
                 Debug.Log("Zoom0 Off");
                 Debug.Log("Zoom1 On");
                 Zoom0Wall.SetActive(false);
+                //FadeOut(hud_spriteRenderer, hud, fadeDuration);
                 hud.SetActive(false);
                 cross.SetActive(true);
 
@@ -85,13 +93,28 @@ public class ZoomController : MonoBehaviour
             }
 
         }
+
     }
-    //public void TeleportarCamaraAlCursor()
-    //{
-    //    Vector3 mousePos = Mouse.current.position.ReadValue();
-    //    Vector3 worldPos = MainCam.ScreenToWorldPoint(mousePos);
-    //    worldPos.z = -10f;
-    //    Cam.position = worldPos;
-    //}
+    public void FadeOut(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration = 1f)
+    {
+        StartCoroutine(FadeOutCoroutine(spriteRenderer, targetObject, fadeDuration));
+    }
+
+    private IEnumerator FadeOutCoroutine(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration)
+    {
+        float elapsed = 0f;
+        Color color = spriteRenderer.color;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = 1f - (elapsed / fadeDuration);
+            spriteRenderer.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+
+        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
+        targetObject.SetActive(false);
+    }
 }
 
