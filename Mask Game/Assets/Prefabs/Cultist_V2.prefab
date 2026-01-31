@@ -1139,9 +1139,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4243636646500207732}
   - component: {fileID: 5003918957984329067}
-  - component: {fileID: 8514120319308842947}
   - component: {fileID: 3715295585956412299}
   - component: {fileID: 5420699876696682099}
+  - component: {fileID: 4979519481752734334}
   m_Layer: 0
   m_Name: Cultist_V2
   m_TagString: ChosenCultist
@@ -1223,20 +1223,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8514120319308842947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8043306391914083526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  rb: {fileID: 0}
-  speed: 0
 --- !u!70 &3715295585956412299
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1300,6 +1286,19 @@ MonoBehaviour:
   maskEyesIndex: -1
   maskAccessoryIndex: -1
   colorIndex: -1
+--- !u!114 &4979519481752734334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043306391914083526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
+  Cultist: {fileID: 8043306391914083526}
 --- !u!1 &8202613908527656794
 GameObject:
   m_ObjectHideFlags: 0
