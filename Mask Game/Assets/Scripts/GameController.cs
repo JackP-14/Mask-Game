@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 {
     [Header("References")]
     public TextController textController;
-    public CultistRandomSpawn cultistSpawner;
+    public SpawnCultistControl cultistSpawner;
 
     [Header("Game State")]
     public int lives = 3;
