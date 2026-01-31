@@ -1159,7 +1159,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.46, y: -0.1, z: 0}
-  m_LocalScale: {x: 0.06895332, y: 0.06895332, z: 0.06895332}
+  m_LocalScale: {x: 0.027, y: 0.027, z: 0.027}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3740436507762776624}
@@ -1298,7 +1298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
-  Cultist: {fileID: 8043306391914083526}
 --- !u!1 &8202613908527656794
 GameObject:
   m_ObjectHideFlags: 0
