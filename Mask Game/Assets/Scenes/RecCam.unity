@@ -334,10 +334,10 @@ MonoBehaviour:
   - {fileID: 8838434566165386659, guid: 47f35f7e6b4e0ea4187f9a4430649365, type: 3}
   velocidadTransicion: 0.2
   secuenciaFinalLoop:
-  - {fileID: -2947922733291078372, guid: d5e951af0e64e714d982085259c85a29, type: 3}
-  - {fileID: -1686960283266885770, guid: 307a81934aea2f240aa34a9ccd0540e7, type: 3}
-  - {fileID: 1437659098898942440, guid: d868ebcaa487f8c46921b846eca850d1, type: 3}
-  - {fileID: -1328045616218207944, guid: 6aef1a15c02e2414087da79a954ff33f, type: 3}
+  - {fileID: 8666797190066422075, guid: d15bded1788084540b2e1393c2d95eb0, type: 3}
+  - {fileID: 4596953500116382548, guid: 63530bf5f57a63c4eb77cf836e0457a4, type: 3}
+  - {fileID: 6939485705091798405, guid: d28dcfc6086ef434fabd7253910d3119, type: 3}
+  - {fileID: -8524557875891511975, guid: 3fa229c622a78ee488fac3ef0905cf5a, type: 3}
   velocidadFinalLoop: 0.2
   gritos:
   - {fileID: 8300000, guid: a9e7c7da82f610b478f7028fe368077f, type: 3}
