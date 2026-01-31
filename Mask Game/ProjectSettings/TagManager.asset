@@ -13,7 +13,7 @@ TagManager:
   - Cultists
   - Water
   - UI
-  - Wall
+  - 
   - 
   - 
   - 
@@ -42,9 +42,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: NoInsideLight
-    uniqueID: 691676519
     locked: 0
   m_RenderingLayers:
   - Default

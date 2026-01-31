@@ -7,11 +7,10 @@ public class NPCMovement : MonoBehaviour
     bool walk_decision = false;
     float speed;
     int direction=-1;
-    
+
     [Header("How many seconds pass between movement checks")]
     public float checktime;
-    [Header("Percentage chance of NPCs walking")]
-    public int WalkChancePercent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,8 +30,8 @@ public class NPCMovement : MonoBehaviour
     {
         walk_decision = false;
         previousDirection = direction;
-        int decider = Random.Range(0, 100 );
-        if (decider <= WalkChancePercent) {
+        int decider = Random.Range(0, 10);
+        if (decider == 5) {
             walk_decision = true;
             speed = Random.Range(0f, 1f);
             direction = Random.Range(-1, 2);
