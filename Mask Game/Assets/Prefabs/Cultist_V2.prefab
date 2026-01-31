@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4622702539651388304}
   - component: {fileID: 7139222831435362061}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MaskBig_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8141214617350911147}
   - component: {fileID: 8454377462914945111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MaskSmall_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3776445734082335264}
   - component: {fileID: 1380472802356886512}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: feather
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4757348090841632490}
   - component: {fileID: 6325800199166474548}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rosary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3740436507762776624}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875881885744572447}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mask_Accesory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6915054997129887491}
   - component: {fileID: 4696876786170141451}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: horn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4206847458520285460}
   - component: {fileID: 8730883761530541718}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: restless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5171007750004092596}
   - component: {fileID: 4292802232693429416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141870498780623287}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mask_Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978289465507282329}
   - component: {fileID: 6869065926034266676}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: awake_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7546585333873032953}
   - component: {fileID: 2971488547008651867}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2194833958600301861}
   - component: {fileID: 5130971201616638680}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5801975369057421857}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mask_Type
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,7 +1049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6941400788489725628}
   - component: {fileID: 516118312868392112}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1142,8 @@ GameObject:
   - component: {fileID: 3715295585956412299}
   - component: {fileID: 5420699876696682099}
   - component: {fileID: 4979519481752734334}
-  m_Layer: 0
+  - component: {fileID: 6144092780658238253}
+  m_Layer: 3
   m_Name: Cultist_V2
   m_TagString: ChosenCultist
   m_Icon: {fileID: 0}
@@ -1298,7 +1299,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
-  Cultist: {fileID: 8043306391914083526}
+--- !u!50 &6144092780658238253
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043306391914083526}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8202613908527656794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648216835361067922}
   - component: {fileID: 6690335580282957565}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MaskMed_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

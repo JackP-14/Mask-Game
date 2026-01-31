@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 98ae89440a93a8f4aa6f539ab208cad3
+guid: c23b4bfeabedabf4aa4de255ed61ba6c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5696491319494607679
-    second: balconyside_0
-  - first:
-      213: 5253151088975483959
-    second: balconyside_1
+      213: -7121763810196994636
+    second: roof_low_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,34 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: balconyside_0
+      name: roof_low_0
       rect:
         serializedVersion: 2
-        x: 2623
-        y: 959
-        width: 17
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1cc7d63835ff1f0b0800000000000000
-      internalID: -5696491319494607679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: balconyside_1
-      rect:
-        serializedVersion: 2
-        x: 2663
+        x: 0
         y: 0
-        width: 845
+        width: 3510
         height: 2480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73417d14511f6e840800000000000000
-      internalID: 5253151088975483959
+      spriteID: 4b5c9fe1c896a2d90800000000000000
+      internalID: -7121763810196994636
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      balconyside_0: -5696491319494607679
-      balconyside_1: 5253151088975483959
+      roof_low_0: -7121763810196994636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

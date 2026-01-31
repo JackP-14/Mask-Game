@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 90c74306be0ec6649baa24657ae38075
+guid: 3b1ceac984358dd418a48bbf41698201
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3067581902316458616
-    second: balconyout_0
-  - first:
-      213: -2981124044764707426
-    second: balconyout_1
+      213: 3667054528505570668
+    second: balcony_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: balconyout_0
+      name: balcony_0
       rect:
         serializedVersion: 2
         x: 2380
-        y: 43
+        y: 0
         width: 1128
-        height: 1473
+        height: 2480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88da2093382cd65d0800000000000000
-      internalID: -3067581902316458616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: balconyout_1
-      rect:
-        serializedVersion: 2
-        x: 2620
-        y: 1309
-        width: 888
-        height: 1048
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e958c68d97be0a6d0800000000000000
-      internalID: -2981124044764707426
+      spriteID: c65ef8f2aaef3e230800000000000000
+      internalID: 3667054528505570668
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      balconyout_0: -3067581902316458616
-      balconyout_1: -2981124044764707426
+      balcony_0: 3667054528505570668
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

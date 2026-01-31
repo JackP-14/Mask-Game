@@ -87,7 +87,7 @@ SpriteRenderer:
   m_Size: {x: 3.64, y: 3.3602502}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1561140287158182969
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_Size: {x: 21.710001, y: 15.651164}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1573565913672816160
@@ -267,7 +267,7 @@ SpriteRenderer:
   m_Size: {x: 15.84, y: 9.990744}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2686038844962352802
@@ -483,7 +483,7 @@ SpriteRenderer:
   m_Size: {x: 3.04, y: 2.3201725}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4643126087212094787
@@ -753,7 +753,7 @@ SpriteRenderer:
   m_Size: {x: 2.5200002, y: 4.520336}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &5812377274526990372
@@ -843,7 +843,7 @@ SpriteRenderer:
   m_Size: {x: 11.820001, y: 5.7504277}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6245748214711023000
@@ -1091,7 +1091,7 @@ SpriteRenderer:
   m_Size: {x: 2.4800003, y: 4.6003423}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &8043306391914083526
@@ -1200,8 +1200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rb: {fileID: 0}
-  speed: 0
 --- !u!114 &-7904927067809509491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,6 +1385,6 @@ SpriteRenderer:
   m_Size: {x: 0.31000003, y: 0.07000521}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

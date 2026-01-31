@@ -3,19 +3,14 @@ using System.Collections;
 
 public class NPCMovement : MonoBehaviour
 {
-    float posX0;
+    int previousDirection;
     bool walk_decision = false;
-    int direction;
-    void Awake()
-    {
-        //spawncultistcontrol = Cultist.GetComponent<SpawnCultistControl>();
-    }
+    float speed;
+    int direction=-1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        posX0 = transform.position.x;
-        float posY0 = transform.position.y;
         InvokeRepeating("walkQuestion", 2f, 2f);
     }
 
@@ -24,21 +19,31 @@ public class NPCMovement : MonoBehaviour
     {
         if (walk_decision)
         {
-            transform.position += new Vector3(1f*direction, 0f, 0f) * Time.deltaTime;
+            transform.position += new Vector3(speed * direction, 0f, 0f) * Time.deltaTime;
         }
+
     }
-    void walkQuestion ()
+    void walkQuestion()
     {
         walk_decision = false;
-        int decider = Random.Range(0, 2);
-        if (decider == 0) {
+        previousDirection = direction;
+        int decider = Random.Range(0, 10);
+        if (decider == 5) {
             walk_decision = true;
+            speed = Random.Range(0f, 1f);
             direction = Random.Range(-1, 2);
             while (direction == 0)
             {
                 direction = Random.Range(-1, 2);
             }
+            if (previousDirection != direction)
+            {
+                swap();
+            }
         }
     }
-
+    void swap ()
+    {
+        transform.Rotate(0, 180, 0);
+    }
 }
