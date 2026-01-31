@@ -526,50 +526,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1 &721463970
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 721463972}
-  - component: {fileID: 721463971}
-  m_Layer: 0
-  m_Name: ZoomController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &721463971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721463970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47f50b7bf1809749b1a1d285fe8ff3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!4 &721463972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721463970}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.81211, y: 1.60534, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &742715783
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &854579030
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1020,6 +976,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &944381131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944381133}
+  - component: {fileID: 944381132}
+  m_Layer: 0
+  m_Name: Zoom2CameraController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &944381132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944381131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64dde05650c6162409d55f940b11f2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zoom2CameraController
+  Camera: {fileID: 716185968}
+  MainCamera: {fileID: 716185967}
+  modo: 0
+  sensibilidad: 5
+  zonaActivacion: 0.15
+  limiteIzquierdo: -7.2
+  limiteDerecho: 7.2
+  limiteInferior: -3.91
+  limiteSuperior: 3.91
+  usarSuavizado: 0
+  velocidadSuavizado: 5
+  posicionObjetivo: {x: 0, y: 0, z: 0}
+--- !u!4 &944381133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944381131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36078, y: 0, z: -5.82682}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071664544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1122,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1106001919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8355099331267413378, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+  m_PrefabInstance: {fileID: 6749986465164463878}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106001921}
+  - component: {fileID: 1106001920}
+  m_Layer: 0
+  m_Name: ZoomController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1106001920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 556885680566780339, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+  m_PrefabInstance: {fileID: 6749986465164463878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106001919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47f50b7bf1809749b1a1d285fe8ff3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  MainCam: {fileID: 716185967}
+  Cam: {fileID: 716185968}
+  Crosshair: {fileID: 1117265852}
+  Zoom0Wall: {fileID: 854579029}
+  Zoom2CameraController: {fileID: 944381131}
+--- !u!4 &1106001921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+  m_PrefabInstance: {fileID: 6749986465164463878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106001919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.81211, y: 1.60534, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1117265850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,8 +1570,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1369829192}
   - component: {fileID: 1369829191}
-  - component: {fileID: 1369829194}
-  - component: {fileID: 1369829193}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1591,79 +1650,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1369829193
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369829190}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &1369829194
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1369829190}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1499997645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2138,83 @@ Transform:
   - {fileID: 1541667556}
   m_Father: {fileID: 1525085526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6749986465164463878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 556885680566780339, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: Cam
+      value: 
+      objectReference: {fileID: 716185968}
+    - target: {fileID: 556885680566780339, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: MainCam
+      value: 
+      objectReference: {fileID: 716185967}
+    - target: {fileID: 556885680566780339, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: Crosshair
+      value: 
+      objectReference: {fileID: 1117265852}
+    - target: {fileID: 556885680566780339, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: Zoom0Wall
+      value: 
+      objectReference: {fileID: 854579029}
+    - target: {fileID: 556885680566780339, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: Zoom2CameraController
+      value: 
+      objectReference: {fileID: 944381131}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.81211
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.60534
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3205542770132672540, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355099331267413378, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
+      propertyPath: m_Name
+      value: ZoomController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 365383f93086bc64182dbdf515af4ba3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2161,4 +2224,5 @@ SceneRoots:
   - {fileID: 854579031}
   - {fileID: 1525085526}
   - {fileID: 1117265852}
-  - {fileID: 721463972}
+  - {fileID: 6749986465164463878}
+  - {fileID: 944381133}
