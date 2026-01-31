@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 9d9ba02229ae47b4fa3990015909fda8
+guid: 7e73f2b9021ab564dad341fcf7f60ea3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4977007025249729612
-    second: MaskBig_0
+      213: -2212607577121802233
+    second: horn_0
   - first:
-      213: 6127183687165894926
-    second: MaskBig_1
+      213: -2160540443931737467
+    second: horn_1
   - first:
-      213: -3117762577567346156
-    second: MaskBig_2
+      213: -5578740503066142267
+    second: horn_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MaskBig_0
+      name: horn_0
       rect:
         serializedVersion: 2
-        x: 255
-        y: 1151
-        width: 31
-        height: 7
+        x: 32
+        y: 565
+        width: 1085
+        height: 1586
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4c32a82581e11540800000000000000
-      internalID: 4977007025249729612
+      spriteID: 708315aa12d3b41e0800000000000000
+      internalID: -2212607577121802233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MaskBig_1
+      name: horn_1
       rect:
         serializedVersion: 2
-        x: 289
-        y: 218
-        width: 1535
-        height: 1566
+        x: 1175
+        y: 677
+        width: 1122
+        height: 1542
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e01671ba911280550800000000000000
-      internalID: 6127183687165894926
+      spriteID: 582859cc9e73402e0800000000000000
+      internalID: -2160540443931737467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MaskBig_2
+      name: horn_2
       rect:
         serializedVersion: 2
-        x: 1963
-        y: 557
-        width: 37
-        height: 9
+        x: 1578
+        y: 556
+        width: 364
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 412971e447b7bb4d0800000000000000
-      internalID: -3117762577567346156
+      spriteID: 5c998a4e1155492b0800000000000000
+      internalID: -5578740503066142267
       vertices: []
       indices: 
       edges: []
@@ -185,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MaskBig_0: 4977007025249729612
-      MaskBig_1: 6127183687165894926
-      MaskBig_2: -3117762577567346156
+      horn_0: -2212607577121802233
+      horn_1: -2160540443931737467
+      horn_2: -5578740503066142267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
