@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7ceb7b27cecaf34184b094c9506d749
+guid: b0b3a6e132b89e6468a9512a71cbca3c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: roofend_0
       rect:
         serializedVersion: 2
-        x: 2154
+        x: 1753
         y: 0
-        width: 1354
-        height: 918
+        width: 1755
+        height: 2300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
