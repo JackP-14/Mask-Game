@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d17c6dc87624a5c489342b96e9eae5b7
+guid: 637aebdfce1baca4d8c4f92ed0e50d54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4636772920983282142
-    second: MaskMed_0
+      213: 4977007025249729612
+    second: MaskBig_0
+  - first:
+      213: 6127183687165894926
+    second: MaskBig_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MaskMed_0
+      name: MaskBig_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 274
-        width: 2268
-        height: 1565
+        x: 495
+        y: 1215
+        width: 31
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed1eb5ba760295040800000000000000
-      internalID: 4636772920983282142
+      spriteID: c4c32a82581e11540800000000000000
+      internalID: 4977007025249729612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MaskBig_1
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 282
+        width: 1535
+        height: 1566
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01671ba911280550800000000000000
+      internalID: 6127183687165894926
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MaskMed_0: 4636772920983282142
+      MaskBig_0: 4977007025249729612
+      MaskBig_1: 6127183687165894926
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

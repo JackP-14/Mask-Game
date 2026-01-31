@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 59c5a2cf2c7f1e048accffcff9b1f584
+guid: 5e040ed2135b41e43ab081347bb48850
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1500134969566573645
-    second: feather_0
-  - first:
-      213: -6283315840386048745
-    second: feather_1
+      213: 1205826338162889643
+    second: tunica_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: feather_0
+      name: tunica_0
       rect:
         serializedVersion: 2
-        x: 150
-        y: 340
-        width: 889
-        height: 966
+        x: 242
+        y: 192
+        width: 2148
+        height: 3178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4438288ecc81d410800000000000000
-      internalID: 1500134969566573645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: feather_1
-      rect:
-        serializedVersion: 2
-        x: 1579
-        y: 259
-        width: 541
-        height: 1107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71d543a988d2dc8a0800000000000000
-      internalID: -6283315840386048745
+      spriteID: ba352037aa4fbb010800000000000000
+      internalID: 1205826338162889643
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      feather_0: 1500134969566573645
-      feather_1: -6283315840386048745
+      tunica_0: 1205826338162889643
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

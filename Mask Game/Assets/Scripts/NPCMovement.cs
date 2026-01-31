@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class NPCMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        float Xpos = transform.position.x;
-        float Ypos = transform.position.y;
-    }
-
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private float speed;
     // Update is called once per frame
     void Update()
     {

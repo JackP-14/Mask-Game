@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 14c24cbcde9f5ee448ab965502241465
+guid: 1234e5fc47c385c42a9d50d93b556b7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8652268087487919758
-    second: MaskSmall_0
+      213: 1500134969566573645
+    second: feather_0
+  - first:
+      213: -6283315840386048745
+    second: feather_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MaskSmall_0
+      name: feather_0
       rect:
         serializedVersion: 2
-        x: 304
-        y: 668
-        width: 1584
-        height: 999
+        x: 150
+        y: 340
+        width: 889
+        height: 966
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e867a20ebf7031870800000000000000
-      internalID: 8652268087487919758
+      spriteID: d4438288ecc81d410800000000000000
+      internalID: 1500134969566573645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feather_1
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 259
+        width: 541
+        height: 1107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d543a988d2dc8a0800000000000000
+      internalID: -6283315840386048745
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MaskSmall_0: 8652268087487919758
+      feather_0: 1500134969566573645
+      feather_1: -6283315840386048745
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 23a7975761aec0b49a99ca5886396534
+guid: d4c79c4da533b4b4d9439a4ea17f9186
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6351138027808595873
-    second: rosary_0
+      213: 3985016074766035288
+    second: awake_0
   - first:
-      213: 7427896226756769639
-    second: rosary_1
+      213: 5393256371722796798
+    second: awake_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rosary_0
+      name: awake_0
       rect:
         serializedVersion: 2
-        x: 350
-        y: 370
-        width: 482
-        height: 1295
+        x: 653
+        y: 934
+        width: 1182
+        height: 575
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1af9103f266c32850800000000000000
-      internalID: 6351138027808595873
+      spriteID: 859a6a8a10f9d4730800000000000000
+      internalID: 3985016074766035288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rosary_1
+      name: awake_1
       rect:
         serializedVersion: 2
-        x: 1493
-        y: 208
-        width: 693
-        height: 1652
+        x: 1861
+        y: 990
+        width: 26
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7673d487340351760800000000000000
-      internalID: 7427896226756769639
+      spriteID: efe362b6812b8da40800000000000000
+      internalID: 5393256371722796798
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rosary_0: 6351138027808595873
-      rosary_1: 7427896226756769639
+      awake_0: 3985016074766035288
+      awake_1: 5393256371722796798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
