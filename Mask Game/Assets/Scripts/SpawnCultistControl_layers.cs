@@ -11,10 +11,12 @@ public class SpawnCultistControl_layers : MonoBehaviour
 
     [Header("Minimum number of cultists")]
     public int MinCultists;
-
+    [Header("Y levels for spawn")]
+    public float Y_lvl0 = -3f;
+    public float Y_lvl1 = -1f;
+    public float Y_lvl2 = 1f;
     private List<CultistRandomizer> spawnedCultists = new List<CultistRandomizer>();
     private CultistRandomizer targetCultist;
-    public int SpawnLvlY;
 
     void Start()
     {
@@ -39,23 +41,24 @@ public class SpawnCultistControl_layers : MonoBehaviour
 
     public void Spawn_cultist(int spawnIndex)
     {
+        int SpawnLvlY;
         float SpawnPointX = 0f;
         float SpawnPointY = 0f;
         SpawnLvlY = Random.Range(0, 3);
 
         if (SpawnLvlY == 0)
         {
-            SpawnPointY = -3f;
+            SpawnPointY = Y_lvl0;
             SpawnPointX = Random.Range(-4.6f, 4.3f);
         }
         else if (SpawnLvlY == 1)
         {
-            SpawnPointY = -1f;
+            SpawnPointY = Y_lvl1;
             SpawnPointX = Random.Range(-4.6f, 5.3f);
         }
         else
         {
-            SpawnPointY = 1f;
+            SpawnPointY = Y_lvl2;
             SpawnPointX = Random.Range(-4.6f, 3.4f);
         }
 
