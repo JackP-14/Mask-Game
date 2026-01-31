@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 436b99a7da4fc4c4980f8f1c8614e49a
-guid: c86546682bb640b4f86ecf060c3e540c
-guid: 33204c3173995fb4592a5e7822a947f1
+guid: 43784723061272f41875598630a711d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2578688244036318030
-    second: purpleroom_0
+      213: 1767537116906870453
+    second: 1 arm guy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purpleroom_0
+      name: 1 arm guy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3508
-        height: 2480
+        width: 7253
+        height: 4080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e43b244ab4759c320800000000000000
-      internalID: 2578688244036318030
+      spriteID: 5b65d8c94ad878810800000000000000
+      internalID: 1767537116906870453
       vertices: []
       indices: 
       edges: []
@@ -137,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      purpleroom_0: 2578688244036318030
+      1 arm guy_0: 1767537116906870453
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
