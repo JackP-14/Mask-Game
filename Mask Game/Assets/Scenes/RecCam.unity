@@ -315,11 +315,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImageCycler
   imagenEnPantalla: {fileID: 1184152449}
-  formas:
-  - {fileID: -8905337347224387082, guid: 80269f910ef989343b07085fb19a32ff, type: 3}
-  - {fileID: 1767537116906870453, guid: 43784723061272f41875598630a711d1, type: 3}
-  - {fileID: -5790898555706727831, guid: 40b4f5fc5c077204984f20c5882a8c8f, type: 3}
-  framesDelEfecto:
+  imagenesEstaticas:
+  - {fileID: -8214862417489511218, guid: d78b14ae320c3a2459c0ac151d6da973, type: 3}
+  - {fileID: 7959172647102497005, guid: cad966e4ade98f644b7fa4231b04a5b1, type: 3}
+  - {fileID: 2635530409738317999, guid: b36a4159f078c8d4fbf0e57f863e6f6f, type: 3}
+  - {fileID: -1226697584953551975, guid: 8f4c5e1e44f1e8042a797c4ff6faa616, type: 3}
+  - {fileID: -2969427093175125916, guid: df3d34076a4602c4d911eb8db2da0fae, type: 3}
+  secuenciaGlitchTransition:
   - {fileID: -7150769156350098348, guid: 88970b67a9076494897e0165253f59af, type: 3}
   - {fileID: 4356807744297272184, guid: c53de8f845fac714f8da7182ef594fd3, type: 3}
   - {fileID: 6305914402527374893, guid: c7a6d6d0fa8e2854eb639c08aa8563c3, type: 3}
@@ -330,8 +332,13 @@ MonoBehaviour:
   - {fileID: 6305914402527374893, guid: c7a6d6d0fa8e2854eb639c08aa8563c3, type: 3}
   - {fileID: 7516680823530004032, guid: 8b4ccf9202294bd4a9dc2f981b9bf284, type: 3}
   - {fileID: 8838434566165386659, guid: 47f35f7e6b4e0ea4187f9a4430649365, type: 3}
-  velocidadDelGif: 0.2
-  audioSource: {fileID: 2092221058}
+  velocidadTransicion: 0.2
+  secuenciaFinalLoop:
+  - {fileID: 8666797190066422075, guid: d15bded1788084540b2e1393c2d95eb0, type: 3}
+  - {fileID: 4596953500116382548, guid: 63530bf5f57a63c4eb77cf836e0457a4, type: 3}
+  - {fileID: 6939485705091798405, guid: d28dcfc6086ef434fabd7253910d3119, type: 3}
+  - {fileID: -8524557875891511975, guid: 3fa229c622a78ee488fac3ef0905cf5a, type: 3}
+  velocidadFinalLoop: 0.2
   gritos:
   - {fileID: 8300000, guid: a9e7c7da82f610b478f7028fe368077f, type: 3}
   - {fileID: 8300000, guid: 9d023fd0973a06946bc200a287d589cf, type: 3}
@@ -500,14 +507,14 @@ RectTransform:
   m_GameObject: {fileID: 1184152448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 3, z: 1}
+  m_LocalScale: {x: 3, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1108887930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -611.2759, y: 310}
+  m_AnchoredPosition: {x: -217.6, y: 145.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1664663918

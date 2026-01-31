@@ -1,82 +1,115 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem; // Seguimos con el Input System nuevo
+using UnityEngine.InputSystem;
 using System.Collections;
 
-[RequireComponent(typeof(AudioSource))] // Esto añade el componente de audio automáticamente si no lo tienes
-public class ImageCyclerCompleto : MonoBehaviour
+[RequireComponent(typeof(AudioSource))]
+public class SequentialGlitchCycler : MonoBehaviour
 {
-    [Header("Visuales")]
+    [Header("Componente Visual")]
     public Image imagenEnPantalla;
-    public Sprite[] formas;         // Triángulo, Círculo, Cuadrado
-    public Sprite[] framesDelEfecto; // Tu GIF descompuesto
-    public float velocidadDelGif = 0.05f;
 
-    [Header("Audio (Gritos)")]
-    public AudioSource audioSource; // Arrastra el componente aquí
-    public AudioClip[] gritos;      // Arrastra tus archivos de audio aquí
+    // --- LAS TRES CLASES DE IMÁGENES NECESARIAS ---
 
-    private int indexForma = 0;
-    private bool isAnimating = false;
+    [Header("1. Las 5 Imágenes Estáticas (Pasos 1-5)")]
+    [Tooltip("Pon aquí Size: 5. Son las fotos 'quietas' entre transiciones.")]
+    public Sprite[] imagenesEstaticas; 
+
+    [Header("2. La Transición Glitch (Intermedia)")]
+    [Tooltip("La animación corta que suena con el grito entre cada paso.")]
+    public Sprite[] secuenciaGlitchTransition;
+    [Range(0.01f, 0.2f)]
+    public float velocidadTransicion = 0.05f;
+
+    [Header("3. La Secuencia Final (Paso 6 - Infinito)")]
+    [Tooltip("El bucle eterno que queda al final.")]
+    public Sprite[] secuenciaFinalLoop;
+    [Range(0.01f, 0.5f)]
+    public float velocidadFinalLoop = 0.1f;
+
+    // ----------------------------------------------
+
+    [Header("Audio")]
+    public AudioClip[] gritos;
+    private AudioSource audioSource;
+
+    private int indiceActual = 0; // Para saber en qué imagen estática vamos (0-4)
+    private bool enTransicion = false; // Para bloquear clicks mientras se anima
+    private bool bucleFinalActivo = false; // Para saber si hemos llegado al final
 
     void Start()
     {
-        // Si no asignaste el AudioSource manual, lo buscamos
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
-        if (formas.Length > 0)
+        // Empezamos mostrando la primera imagen estática
+        if (imagenesEstaticas.Length > 0)
         {
-            imagenEnPantalla.sprite = formas[0];
+            imagenEnPantalla.sprite = imagenesEstaticas[0];
         }
     }
 
     void Update()
     {
-        // Input System: Click izquierdo
+        // Si hay click izquierdo Y NO estamos en mitad de una transición Y NO hemos llegado al final
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (!isAnimating)
+            if (!enTransicion && !bucleFinalActivo)
             {
-                StartCoroutine(SecuenciaCambio());
+                StartCoroutine(HacerTransicion());
             }
         }
     }
 
-    IEnumerator SecuenciaCambio()
+    // Esta corrutina maneja TODO el proceso de cambio
+    IEnumerator HacerTransicion()
     {
-        isAnimating = true;
+        enTransicion = true; // Bloqueamos inputs
 
-        // 1. REPRODUCIR GRITO ALEATORIO
+        // A) Reproducir Grito
         ReproducirGritoRandom();
 
-        // 2. REPRODUCIR EFECTO VISUAL (GIF)
-        foreach (Sprite frame in framesDelEfecto)
+        // B) Reproducir la animación de Glitch de transición
+        foreach (Sprite frame in secuenciaGlitchTransition)
         {
             imagenEnPantalla.sprite = frame;
-            yield return new WaitForSeconds(velocidadDelGif);
+            yield return new WaitForSeconds(velocidadTransicion);
         }
 
-        // 3. CAMBIAR A LA SIGUIENTE FORMA
-        indexForma++;
-        if (indexForma >= formas.Length)
+        // C) Calcular el siguiente paso
+        indiceActual++;
+
+        // Si aún estamos dentro del rango de las 5 imágenes (índices 0 a 4)
+        if (indiceActual < imagenesEstaticas.Length)
         {
-            indexForma = 0; // Vuelta al principio
+            // Ponemos la siguiente imagen estática
+            imagenEnPantalla.sprite = imagenesEstaticas[indiceActual];
+            enTransicion = false; // Desbloqueamos para el siguiente click
         }
-        imagenEnPantalla.sprite = formas[indexForma];
+        else
+        {
+            // Si nos hemos pasado del índice 4, toca el final
+            bucleFinalActivo = true; // Marcamos que es el final para no aceptar más clicks
+            StartCoroutine(BucleFinalInfinito()); // Arrancamos el loop eterno
+            // Nota: No ponemos 'enTransicion = false' porque ya no queremos más inputs.
+        }
+    }
 
-        isAnimating = false;
+    IEnumerator BucleFinalInfinito()
+    {
+        int frameLoop = 0;
+        while (true)
+        {
+            imagenEnPantalla.sprite = secuenciaFinalLoop[frameLoop];
+            frameLoop = (frameLoop + 1) % secuenciaFinalLoop.Length;
+            yield return new WaitForSeconds(velocidadFinalLoop);
+        }
     }
 
     void ReproducirGritoRandom()
     {
-        // Seguridad: Solo suena si hay clips y un AudioSource
         if (gritos.Length > 0 && audioSource != null)
         {
-            // Elegimos un número al azar entre 0 y el total de gritos
-            int indexAleatorio = Random.Range(0, gritos.Length);
-            
-            // Usamos PlayOneShot para que puedan solaparse si fuera necesario y variar el volumen si quieres
-            audioSource.PlayOneShot(gritos[indexAleatorio]);
+            audioSource.PlayOneShot(gritos[Random.Range(0, gritos.Length)]);
         }
     }
 }
