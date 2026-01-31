@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CultistRandomSpawn1 : MonoBehaviour
+public class SpawnCultistControl_layers : MonoBehaviour
 {
     [Header("Object to be spawned at level start")]
     public GameObject Cultist;
@@ -14,6 +14,7 @@ public class CultistRandomSpawn1 : MonoBehaviour
 
     private List<CultistRandomizer> spawnedCultists = new List<CultistRandomizer>();
     private CultistRandomizer targetCultist;
+    public int SpawnLvlY;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class CultistRandomSpawn1 : MonoBehaviour
     {
         float SpawnPointX = 0f;
         float SpawnPointY = 0f;
-        int SpawnLvlY = Random.Range(0, 3);
+        SpawnLvlY = Random.Range(0, 3);
 
         if (SpawnLvlY == 0)
         {
