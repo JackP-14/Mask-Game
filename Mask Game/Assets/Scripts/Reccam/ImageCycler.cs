@@ -1,19 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem; // 1. IMPORTANTE: Necesario para el nuevo sistema
+using UnityEngine.InputSystem; // Seguimos con el Input System nuevo
+using System.Collections;
 
-public class ImageCycler : MonoBehaviour
+[RequireComponent(typeof(AudioSource))] // Esto añade el componente de audio automáticamente si no lo tienes
+public class ImageCyclerCompleto : MonoBehaviour
 {
-    [Header("Componentes")]
-    public Image imagenEnPantalla; 
+    [Header("Visuales")]
+    public Image imagenEnPantalla;
+    public Sprite[] formas;         // Triángulo, Círculo, Cuadrado
+    public Sprite[] framesDelEfecto; // Tu GIF descompuesto
+    public float velocidadDelGif = 0.05f;
 
-    [Header("Tus Sprites")]
-    public Sprite[] formas; 
+    [Header("Audio (Gritos)")]
+    public AudioSource audioSource; // Arrastra el componente aquí
+    public AudioClip[] gritos;      // Arrastra tus archivos de audio aquí
 
-    private int index = 0; 
+    private int indexForma = 0;
+    private bool isAnimating = false;
 
     void Start()
     {
+        // Si no asignaste el AudioSource manual, lo buscamos
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+
         if (formas.Length > 0)
         {
             imagenEnPantalla.sprite = formas[0];
@@ -22,25 +32,51 @@ public class ImageCycler : MonoBehaviour
 
     void Update()
     {
-        // 2. CORRECCIÓN: Usamos el sistema nuevo (Mouse.current)
+        // Input System: Click izquierdo
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            CambiarImagen();
+            if (!isAnimating)
+            {
+                StartCoroutine(SecuenciaCambio());
+            }
         }
     }
 
-    public void CambiarImagen()
+    IEnumerator SecuenciaCambio()
     {
-        // Solo intentamos cambiar si tenemos formas asignadas
-        if (formas.Length == 0) return;
+        isAnimating = true;
 
-        index++;
+        // 1. REPRODUCIR GRITO ALEATORIO
+        ReproducirGritoRandom();
 
-        if (index >= formas.Length)
+        // 2. REPRODUCIR EFECTO VISUAL (GIF)
+        foreach (Sprite frame in framesDelEfecto)
         {
-            index = 0; // Vuelve al triángulo
+            imagenEnPantalla.sprite = frame;
+            yield return new WaitForSeconds(velocidadDelGif);
         }
 
-        imagenEnPantalla.sprite = formas[index];
+        // 3. CAMBIAR A LA SIGUIENTE FORMA
+        indexForma++;
+        if (indexForma >= formas.Length)
+        {
+            indexForma = 0; // Vuelta al principio
+        }
+        imagenEnPantalla.sprite = formas[indexForma];
+
+        isAnimating = false;
+    }
+
+    void ReproducirGritoRandom()
+    {
+        // Seguridad: Solo suena si hay clips y un AudioSource
+        if (gritos.Length > 0 && audioSource != null)
+        {
+            // Elegimos un número al azar entre 0 y el total de gritos
+            int indexAleatorio = Random.Range(0, gritos.Length);
+            
+            // Usamos PlayOneShot para que puedan solaparse si fuera necesario y variar el volumen si quieres
+            audioSource.PlayOneShot(gritos[indexAleatorio]);
+        }
     }
 }
