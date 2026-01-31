@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 369a9c55678242f4b9ababb4755f6d7a
+guid: a0e7614e643c3fb43a58ba68fc4b68a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -825623256818716237
-    second: scope1_0
+      213: -6855218837941648915
+    second: puerta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scope1_0
+      name: puerta_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3b1f403b50cca84f0800000000000000
-      internalID: -825623256818716237
+      spriteID: de10ce299ce5dd0a0800000000000000
+      internalID: -6855218837941648915
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scope1_0: -825623256818716237
+      puerta_0: -6855218837941648915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
