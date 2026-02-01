@@ -1201,7 +1201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   checktime: 2
-  WalkChancePercent: 100
+  WalkChancePercent: 50
+  Ymaxvariation: 0.05
+  Yspeed: 0.3
 --- !u!114 &-7904927067809509491
 MonoBehaviour:
   m_ObjectHideFlags: 0
