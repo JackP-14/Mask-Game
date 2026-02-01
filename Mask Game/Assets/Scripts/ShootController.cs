@@ -1,16 +1,26 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
+using System.Collections;
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private string targetTag = "Target";
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameController gameController;
+    [Header("Audio Clip")]
+    public AudioClip soundToPlay;
+    private AudioSource audioSource;
+    [Header("Black Screen after shot")]
+    public GameObject blackscreen;
+    private SpriteRenderer black_renderer;
     void Start()
     {
+        black_renderer = blackscreen.GetComponent<SpriteRenderer>();
         if (mainCamera == null)
         {
             mainCamera = Camera.main;
         }
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -18,7 +28,9 @@ public class ShootController : MonoBehaviour
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (ZoomController.Zoom0 == true) return;
-            HandleClick();
+            FadeIn(black_renderer, blackscreen, 0.5f);
+            audioSource.PlayOneShot(soundToPlay);
+            Invoke("HandleClick", 1f);
         }
 
     }
@@ -37,7 +49,7 @@ public class ShootController : MonoBehaviour
             }
         }
         OnWrongTagOrMissClicked();
-        gameController.lives = 0;
+        SaveData.Instance.lives = 0;
     }
     void OnCorrectTagClicked(GameObject clickedObject)
     {
@@ -51,5 +63,26 @@ public class ShootController : MonoBehaviour
         Debug.Log("Clicked wrong object or empty space");
 
         // Add your other condition here
+    }
+    public void FadeIn(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration = 0.5f)
+    {
+        StartCoroutine(FadeInCoroutine(spriteRenderer, targetObject, fadeDuration));
+    }
+
+    private IEnumerator FadeInCoroutine(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration)
+    {
+        float elapsed = 0f;
+        Color color = spriteRenderer.color;
+
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = 0f + (elapsed / fadeDuration);
+            spriteRenderer.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+
+        spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
+        //targetObject.SetActive(false);
     }
 }

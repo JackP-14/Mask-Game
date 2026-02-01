@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
+
 
 public class ZoomController : MonoBehaviour
 {
@@ -9,28 +9,29 @@ public class ZoomController : MonoBehaviour
     public GameObject Zoom0Wall;
     public SpriteRenderer wall_spriteRenderer;
     public GameObject Zoom2CameraController;
+    public static bool Zoom_Q = false;
     public static bool Zoom0 = true;
     public static bool Zoom1 = false;
     public static bool Zoom2 = false;
+
     [Header("Hud and Fade Out")]
     public GameObject hud;
-    //public SpriteRenderer hud_spriteRenderer;
     public GameObject cross;
     public float fadeDuration = 1.0f;
+    [Header("Audio Clip")]
+    public AudioClip soundToPlay;
+    private AudioSource audioSource;
     void Start()
     {
-        //hud_spriteRenderer = hud.GetComponent<SpriteRenderer>();
-        //wall_spriteRenderer = Zoom0Wall.GetComponent<SpriteRenderer>();
+        
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
-        //Vector3 mousePos = Mouse.current.position.ReadValue();
-        //Vector3 worldPos = MainCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, MainCam.nearClipPlane));
-        //worldPos.z = -10f;
-        //Debug.Log($"Cursor en pantalla: {mousePos} | Cursor en mundo: {worldPos}");
         if (Keyboard.current != null &&
         Keyboard.current.wKey.wasPressedThisFrame)
         {
+            audioSource.PlayOneShot(soundToPlay);
             if (Zoom0 == true && Zoom1 == false)
             {
                 Zoom1 = true;
@@ -70,6 +71,7 @@ public class ZoomController : MonoBehaviour
         if (Keyboard.current != null &&
         Keyboard.current.sKey.wasPressedThisFrame)
         {
+            audioSource.PlayOneShot(soundToPlay);
             if (Zoom1 == true && Zoom0 == false)
             {
                 Zoom0 = true;
@@ -101,26 +103,6 @@ public class ZoomController : MonoBehaviour
         }
 
     }
-    public void FadeOut(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration = 1f)
-    {
-        StartCoroutine(FadeOutCoroutine(spriteRenderer, targetObject, fadeDuration));
-    }
 
-    private IEnumerator FadeOutCoroutine(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration)
-    {
-        float elapsed = 0f;
-        Color color = spriteRenderer.color;
-
-        while (elapsed < fadeDuration)
-        {
-            elapsed += Time.deltaTime;
-            float alpha = 1f - (elapsed / fadeDuration);
-            spriteRenderer.color = new Color(color.r, color.g, color.b, alpha);
-            yield return null;
-        }
-
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
-        targetObject.SetActive(false);
-    }
 }
 

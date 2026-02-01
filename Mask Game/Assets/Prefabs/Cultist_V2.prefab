@@ -1277,11 +1277,11 @@ MonoBehaviour:
   maskEyesParent: {fileID: 141870498780623287}
   maskAccessoryParent: {fileID: 1875881885744572447}
   cultistColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.5641509, b: 0.5641509, a: 1}
+  - {r: 0.86957604, g: 0.49019608, b: 1, a: 1}
+  - {r: 0.81741285, g: 0.96981126, b: 0.5251619, a: 1}
+  - {r: 1, g: 0.8157403, b: 0.4433962, a: 1}
+  - {r: 0.6320754, g: 0.8383094, b: 1, a: 1}
   accessoryProbability: 1
   maskTypeIndex: -1
   maskEyesIndex: -1

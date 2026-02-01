@@ -10,9 +10,6 @@ public class GameController : MonoBehaviour
     public TextController textController;
     public SpawnCultistControl_layers cultistSpawner;
 
-    [Header("Game State")]
-    public int lives = 3;
-
     [Header("History Display - 6 TextMeshPro")]
     public TextMeshProUGUI historyText1;
     public TextMeshProUGUI historyText2;
@@ -46,7 +43,7 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         // CONSECUENCIA: Si se acaban las vidas
-        if (lives <= 0)
+        if (SaveData.Instance.lives <= 0)
         {
             GameOver();
         }
@@ -126,7 +123,7 @@ public class GameController : MonoBehaviour
     private void OnWrongAnswer(string category, string answer)
     {
         // RESTAR VIDA
-        lives--;
+        SaveData.Instance.lives--;
 
         // Crear mensaje de respuesta incorrecta
         string message = $"{category} NO es {answer}";
@@ -135,7 +132,7 @@ public class GameController : MonoBehaviour
         AddToHistory(message);
 
         Debug.Log($"✗ {message}");
-        Debug.Log($"Vidas restantes: {lives}");
+        Debug.Log($"Vidas restantes: {SaveData.Instance.lives}");
     }
 
     private void AddToHistory(string message)
