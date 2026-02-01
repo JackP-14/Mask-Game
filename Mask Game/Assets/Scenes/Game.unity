@@ -16365,7 +16365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ATRAS
+  m_text: BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7e041f3da61a154aa48465ab5a70931, type: 2}
   m_sharedMaterial: {fileID: 1864352428367648632, guid: c7e041f3da61a154aa48465ab5a70931, type: 2}
@@ -16502,8 +16502,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ASFGH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17200,8 +17200,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ASFGH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -17374,31 +17374,31 @@ MonoBehaviour:
   selectButton: {fileID: 1143947597507422277}
   backButton: {fileID: 7134416696710082842}
   categories:
-  - "M\xC1SCARA"
+  - SIZE
   - COLOR
-  - OJOS
-  - ACCESORIO
+  - EYES
+  - ACCESSORY
   maskTypeAnswers:
-  - Grande
-  - Mediana
-  - "Peque\xF1a"
+  - SMALL?
+  - HALF?
+  - FULL?
   colorAnswers:
-  - Rosa
-  - Violeta
-  - Verde
-  - Naranja
-  - Azul
+  - GRAY?
+  - PURPLE?
+  - GREEN?
+  - ORANGE?
+  - BLUE?
   eyesAnswers:
-  - Despierto
-  - Muerto
-  - Inquieto
-  - "P\xEDcaro"
-  - "Ara\xF1a"
+  - AWAKE?
+  - DEAD?
+  - FROWNING?
+  - ANGRY?
+  - SPIDER?
   accessoryAnswers:
-  - Pluma
-  - Flor
-  - Cuerno
-  - Rosario
+  - LEAVES?
+  - FLOWERS?
+  - HORNS?
+  - ROSARIES?
   gameController: {fileID: 907395627469281538}
 --- !u!114 &3955098040040330686
 MonoBehaviour:
@@ -17631,8 +17631,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ASFGH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18049,8 +18049,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ASFGH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18216,7 +18216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PREGUNTAR POR
+  m_text: '----ASK ABOUT:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7e041f3da61a154aa48465ab5a70931, type: 2}
   m_sharedMaterial: {fileID: 1864352428367648632, guid: c7e041f3da61a154aa48465ab5a70931, type: 2}
@@ -18446,8 +18446,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ASFGH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18613,8 +18613,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ASFGH
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18840,10 +18840,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Notes
+  m_text: Clues
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
+  m_sharedMaterial: {fileID: 1206942501819049820, guid: 2678189645a80964fa207fde85c2ff3c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18873,7 +18873,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 5
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
