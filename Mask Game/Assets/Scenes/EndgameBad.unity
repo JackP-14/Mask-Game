@@ -251,12 +251,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lineasDelDialogo:
-  - texto: "(Y as\xED termina todo.) "
+  - texto: (And so it ends.)
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
     efectoDeSonido: {fileID: 0}
-  - texto: "Solo para que lo sepas, esto te lo has provocado t\xFA mismo."
+  - texto: Just so you know, you brought this on yourself.
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
@@ -266,8 +266,8 @@ MonoBehaviour:
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
     efectoDeSonido: {fileID: 8300000, guid: 86794f54ef3a54b40b6b255dfe8972da, type: 3}
-  - texto: "A\xFAn as\xED, te vamos a dar una \xFAltima oportunidad. \xDAnete a nosotros,
-      y te ense\xF1aremos todo lo que te han ocultado."
+  - texto: Still, we'll give you one last chance. Join us, and we'll show you everything
+      they've been hiding from you.
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
