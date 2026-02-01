@@ -618,7 +618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlackScreenFade
   cajaNegra: {fileID: 785822564}
   duracionFade: 2
-  desactivarAlFinal: 1
+  desactivarAlFinal: 0
 --- !u!1 &875913730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textComponent: {fileID: 1144350154}
-  fondoPantalla: {fileID: 875913731}
+  fondoPantalla: {fileID: 785822564}
+  pantallaNegraScript: {fileID: 785822566}
   ambientesEnBucle:
   - {fileID: 0}
   - {fileID: 0}
@@ -1187,12 +1188,14 @@ MonoBehaviour:
     velocidadAnimacion: 0
     efectoDeSonido: {fileID: 0}
   - texto: A submission for the Barcelona Game Jam as part of the Global Game Jam
+      2026
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
     efectoDeSonido: {fileID: 0}
-  - texto: "Victor as the Main Programmer \nAlex as the Main Artist\nMarcel as the
-      Main Gameplay Designer\nNil as the Main Narrative Designer"
+  - texto: "Fernando Garc\xEDa as the Project Manager\nVictor Escudero as the Main
+      Programmer \nAlex Landeira as the Main Artist\nMarcel Ribot as the Main Gameplay
+      Designer\nNil Fern\xE1ndez as the Main Narrative Designer"
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
