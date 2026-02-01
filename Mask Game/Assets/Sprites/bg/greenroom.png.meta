@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1a776cf3a3a613049b50487a12442d2e
+guid: f2ac6eabfb3441d40b827f4d7455aa99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3387753460146381283
-    second: menubg_0
+      213: 7710746880193955191
+    second: greenroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menubg_0
+      name: greenroom_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1edf555d284cf0d0800000000000000
-      internalID: -3387753460146381283
+      spriteID: 77589ea2f63120b60800000000000000
+      internalID: 7710746880193955191
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menubg_0: -3387753460146381283
+      greenroom_0: 7710746880193955191
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

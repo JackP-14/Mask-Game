@@ -46,5 +46,8 @@ TagManager:
   - name: NoInsideLight
     uniqueID: 691676519
     locked: 0
+  - name: HUD light
+    uniqueID: 115219167
+    locked: 0
   m_RenderingLayers:
   - Default
