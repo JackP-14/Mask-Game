@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 public class ZoomController : MonoBehaviour
 {
     public Camera MainCam;
@@ -32,6 +31,14 @@ public class ZoomController : MonoBehaviour
     void Start()
     {
         
+        Zoom_Q = false;
+        Zoom0 = true;
+        Zoom1 = false;
+        Zoom2 = false;
+        Cursor.visible = false;
+        Zoom0_Base.SetActive(true);
+        hud.SetActive(false);
+        Zoom0Wall.SetActive(true);
         audioSource = GetComponent<AudioSource>();
     }
     void Update()
@@ -46,6 +53,7 @@ public class ZoomController : MonoBehaviour
             }
             if (Zoom_Q)
             {
+                Cursor.visible = false;
                 Debug.Log("Zoom0 On");
                 Zoom_Q = false;
                 Zoom0 = true;
@@ -93,6 +101,7 @@ public class ZoomController : MonoBehaviour
             }
             if (Zoom0 && !Zoom_Q)
             {
+                Cursor.visible = true;
                 Zoom0 = false;
                 Zoom_Q = true;
                 hud.SetActive(true);

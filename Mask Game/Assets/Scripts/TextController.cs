@@ -249,7 +249,7 @@ public class TextController : MonoBehaviour
             // Modo: Selección de categoría
             if (questionPromptText != null)
             {
-                questionPromptText.text = "PREGUNTAR POR";
+                questionPromptText.text = "ASK ABOUT:";
             }
 
             if (mainText != null)
@@ -281,15 +281,15 @@ public class TextController : MonoBehaviour
         switch (categoryIndex)
         {
             case 0: // MÁSCARA
-                return "La máscara es:";
+                return "IS THE SIZE";
             case 1: // COLOR
-                return "La máscara es de color:";
+                return "IS THE COLOR";
             case 2: // OJOS
-                return "Los ojos son:";
+                return "ARE THE EYES";
             case 3: // ACCESORIO
-                return "El accesorio es:";
+                return "IS THE ACCESSORY";
             default:
-                return "Pregunta:";
+                return "ASK ABOUT";
         }
     }
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private string targetTag = "Target";
@@ -13,6 +14,7 @@ public class ShootController : MonoBehaviour
     [Header("Black Screen after shot")]
     public GameObject blackscreen;
     private SpriteRenderer black_renderer;
+    public GameObject zoomController;
     void Start()
     {
         black_renderer = blackscreen.GetComponent<SpriteRenderer>();
@@ -28,7 +30,8 @@ public class ShootController : MonoBehaviour
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (ZoomController.Zoom0 == true || ZoomController.Zoom_Q == true) return;
-            FadeIn(black_renderer, blackscreen, 0.5f);
+            zoomController.SetActive(false);
+            FadeIn(black_renderer, blackscreen, 0.05f);
             audioSource.PlayOneShot(soundToPlay);
             Invoke("HandleClick", 1f);
         }
@@ -45,11 +48,21 @@ public class ShootController : MonoBehaviour
             if (hit.collider.CompareTag(targetTag))
             {
                 OnCorrectTagClicked(hit.collider.gameObject);
+
+                Invoke("LoadEndgameGood",5f);
                 return;
             }
         }
         OnWrongTagOrMissClicked();
-        SaveData.Instance.lives = 0;
+        Invoke("SetLoseCondition", 5f);
+    }
+    void SetLoseCondition()
+    {
+        SaveData.Instance.lives = -20;
+    }
+    void LoadEndgameGood()
+    {
+        SceneManager.LoadScene("EndgameGood"); 
     }
     void OnCorrectTagClicked(GameObject clickedObject)
     {
@@ -64,7 +77,7 @@ public class ShootController : MonoBehaviour
 
         // Add your other condition here
     }
-    public void FadeIn(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration = 0.5f)
+    public void FadeIn(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration = 0.05f)
     {
         StartCoroutine(FadeInCoroutine(spriteRenderer, targetObject, fadeDuration));
     }
