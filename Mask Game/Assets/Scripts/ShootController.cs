@@ -27,7 +27,7 @@ public class ShootController : MonoBehaviour
         // Check for left mouse button click using new Input System
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (ZoomController.Zoom0 == true) return;
+            if (ZoomController.Zoom0 == true || ZoomController.Zoom_Q == true) return;
             FadeIn(black_renderer, blackscreen, 0.5f);
             audioSource.PlayOneShot(soundToPlay);
             Invoke("HandleClick", 1f);
