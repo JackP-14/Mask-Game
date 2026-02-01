@@ -43,13 +43,24 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         // CONSECUENCIA: Si se acaban las vidas
-        if (SaveData.Instance.lives <= 0)
+        if (SaveData.Instance.lives == -20)
         {
             GameOver();
         }
+        else if (SaveData.Instance.lives <= 0)
+        {
+            // Inside your MonoBehaviour class:
+            Invoke("LoadMainMenu", 10f); // 3 seconds delay
+
+        }
     }
 
-    public void VerifyAnswer(int categoryIndex, int answerIndex)
+void LoadMainMenu()
+{
+    SceneManager.LoadScene("MainMenu"); // Replace with your scene name
+}
+
+public void VerifyAnswer(int categoryIndex, int answerIndex)
     {
         CultistRandomizer targetCultist = cultistSpawner.GetTargetCultist();
 
@@ -183,7 +194,7 @@ public class GameController : MonoBehaviour
         Debug.Log("═══════════════════════════════");
 
         // Aquí más adelante añadirás: cargar escena, pausar juego, etc.
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("EndgameBad");
     }
 
     // Método público para obtener el historial completo (por si lo necesitas)
