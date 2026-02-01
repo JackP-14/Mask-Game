@@ -12,6 +12,7 @@ public class ZoomController : MonoBehaviour
     public static bool Zoom0 = true;
     public static bool Zoom1 = false;
     public static bool Zoom2 = false;
+    public GameObject Tutorial;
     
     [Header("Hud and Elements")]
     public GameObject hud;
@@ -30,8 +31,15 @@ public class ZoomController : MonoBehaviour
     private AudioSource audioSource;
     void Start()
     {
-        
-        Zoom_Q = false;
+        if (SaveData.Instance.ShowedTutorial == 0)
+        {
+            Tutorial.SetActive(true);
+        }
+        else
+        {
+            Tutorial.SetActive(false);
+        }
+            Zoom_Q = false;
         Zoom0 = true;
         Zoom1 = false;
         Zoom2 = false;
@@ -46,6 +54,11 @@ public class ZoomController : MonoBehaviour
         if (Keyboard.current != null &&
         Keyboard.current.wKey.wasPressedThisFrame)
         {
+            if (SaveData.Instance.ShowedTutorial == 0)
+            {
+                SaveData.Instance.ShowedTutorial = 1;
+                Tutorial.SetActive(false);
+            }
             if (Zoom2) return;
             if (!Zoom_Q)
             {
@@ -94,6 +107,11 @@ public class ZoomController : MonoBehaviour
         if (Keyboard.current != null &&
         Keyboard.current.sKey.wasPressedThisFrame)
         {
+            if (SaveData.Instance.ShowedTutorial == 0)
+            {
+                SaveData.Instance.ShowedTutorial = 1;
+                Tutorial.SetActive(false);
+            }
             if (Zoom_Q) return;
             if (!Zoom0)
             {

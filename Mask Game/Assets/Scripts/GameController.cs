@@ -78,25 +78,25 @@ public void VerifyAnswer(int categoryIndex, int answerIndex)
         switch (categoryIndex)
         {
             case 0: // MÁSCARA
-                categoryName = "la máscara";
+                categoryName = "The size";
                 answerName = textController.maskTypeAnswers[answerIndex];
                 isCorrect = (targetCultist.maskTypeIndex == answerIndex);
                 break;
 
             case 1: // COLOR
-                categoryName = "el color";
+                categoryName = "The color";
                 answerName = textController.colorAnswers[answerIndex];
                 isCorrect = (targetCultist.colorIndex == answerIndex);
                 break;
 
             case 2: // OJOS
-                categoryName = "los ojos";
+                categoryName = "The eyes";
                 answerName = textController.eyesAnswers[answerIndex];
                 isCorrect = (targetCultist.maskEyesIndex == answerIndex);
                 break;
 
             case 3: // ACCESORIO
-                categoryName = "el accesorio";
+                categoryName = "The accessory";
                 answerName = textController.accessoryAnswers[answerIndex];
                 // "Sin accesorio" es el último elemento (índice 4)
                 if (answerIndex == 4)
@@ -123,7 +123,7 @@ public void VerifyAnswer(int categoryIndex, int answerIndex)
     private void OnCorrectAnswer(string category, string answer)
     {
         // Crear mensaje de respuesta correcta
-        string message = $"{category} es {answer}";
+        string message = $"{category} is {answer}";
 
         // Añadir a la lista de historial
         AddToHistory(message);
@@ -137,7 +137,7 @@ public void VerifyAnswer(int categoryIndex, int answerIndex)
         SaveData.Instance.lives--;
 
         // Crear mensaje de respuesta incorrecta
-        string message = $"{category} NO es {answer}";
+        string message = $"{category} is not {answer}";
 
         // Añadir a la lista de historial
         AddToHistory(message);

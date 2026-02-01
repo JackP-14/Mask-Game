@@ -49,22 +49,22 @@ public class SpawnCultistControl_layers : MonoBehaviour
         if (SpawnLvlY == 0)
         {
             SpawnPointY = Y_lvl0;
-            SpawnPointX = Random.Range(-4.6f, 4.3f);
+            SpawnPointX = Random.Range(-3.5f, 3.5f);
         }
         else if (SpawnLvlY == 1)
         {
             SpawnPointY = Y_lvl1;
-            SpawnPointX = Random.Range(-4.6f, 5.3f);
+            SpawnPointX = Random.Range(-3.5f, 3.5f);
         }
         else
         {
             SpawnPointY = Y_lvl2;
-            SpawnPointX = Random.Range(-4.6f, 3.4f);
+            SpawnPointX = Random.Range(-3.5f, 3.5f);
         }
 
         Vector2 SpawnPosition = new Vector2(SpawnPointX, SpawnPointY);
         GameObject newCultist = Instantiate(Cultist, SpawnPosition, Quaternion.identity);
-
+ 
         SpriteRenderer[] renderers = newCultist.GetComponentsInChildren<SpriteRenderer>(true);
         int layerOffset = spawnIndex * 4;
         Debug.Log($"=== Cultista {spawnIndex} - Offset: {layerOffset} ===");

@@ -1,17 +1,18 @@
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using System.Collections;
 
 public class BlackScreenFade : MonoBehaviour
 {
     [Header("Configuración")]
-    public Image cajaNegra; 
-    public float duracionFade = 2.0f; 
+    public Image cajaNegra;
+    public float duracionFade = 2.0f;
     [Tooltip("Si es true, desactiva el objeto al terminar el fade in para que no moleste.")]
     public bool desactivarAlFinal = true;
 
     void Start()
     {
+        SaveData.Instance.lives = 5;
         // AUTO-CORRECCIÓN: Si se te olvidó asignar la imagen, intentamos cogerla del propio objeto
         if (cajaNegra == null) cajaNegra = GetComponent<Image>();
 
@@ -21,9 +22,9 @@ public class BlackScreenFade : MonoBehaviour
         {
             // 1. Forzamos negro opaco al inicio
             Color c = cajaNegra.color;
-            c.a = 1f; 
+            c.a = 1f;
             cajaNegra.color = c;
-            
+
             // Aseguramos que el objeto esté activo para verse
             cajaNegra.gameObject.SetActive(true);
 
@@ -64,10 +65,10 @@ public class BlackScreenFade : MonoBehaviour
     {
         // 1. Reactivamos el objeto (porque seguramente se desactivó en el Start)
         gameObject.SetActive(true);
-        
+
         float tiempo = 0f;
         Color colorBase = cajaNegra.color;
-        
+
         // Aseguramos que empiece invisible (Alpha 0)
         cajaNegra.color = new Color(colorBase.r, colorBase.g, colorBase.b, 0f);
 

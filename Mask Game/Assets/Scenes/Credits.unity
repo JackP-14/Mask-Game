@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -714329009550606732, guid: 35b44785dccd83f4cb782955af77cd8f, type: 3}
+  m_Sprite: {fileID: -714329009550606732, guid: f72acbb1d6439b24494d2e8ab00c73b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7675826601332790545, guid: a4d99ae62bb451b44bca7958c451b49d, type: 3}
+  m_Sprite: {fileID: 7675826601332790545, guid: da2d04166a3a10a43ba1c681d97b587c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lineasDelDialogo:
-  - texto: 'Masquerade: A game made by '
+  - texto: "Masquerade: Brought to you by \nA Group Of Individuals"
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
@@ -1200,7 +1200,7 @@ MonoBehaviour:
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
     efectoDeSonido: {fileID: 0}
-  - texto: 'Special thanks to: You!, for trying this amateur project'
+  - texto: 'Special thanks to: You, for trying this amateur project!'
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0

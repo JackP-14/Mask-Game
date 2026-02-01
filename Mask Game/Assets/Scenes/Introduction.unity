@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   textComponent: {fileID: 766887735}
   fondoPantalla: {fileID: 1368175785}
+  pantallaNegraScript: {fileID: 0}
   ambientesEnBucle:
   - {fileID: 8300000, guid: d2095f88b09ff3240892e9be55b13de9, type: 3}
   - {fileID: 8300000, guid: f8fdba0bb43ecfe4698be457cd3e1b8d, type: 3}
@@ -320,7 +321,7 @@ MonoBehaviour:
     efectoDeSonido: {fileID: 0}
   - texto: (You hear a distant voice, accompanied by the monotonous drone of static.
       Surrounded by the unknown, you decide to approach it.)
-    imagenDeFondo: {fileID: 0}
+    imagenDeFondo: {fileID: 6300654922055607269, guid: 78316ba5d8fe86b4f90ac4eddff90a1c, type: 3}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 0}
@@ -338,7 +339,7 @@ MonoBehaviour:
     efectoDeSonido: {fileID: 0}
   - texto: (At first you hesitate, but faced with the terror of what might happen,
       you agree to play the puppet.)
-    imagenDeFondo: {fileID: 0}
+    imagenDeFondo: {fileID: 8626480804542653998, guid: 4e09153a9d15d7c46ba5c5da8bc5a994, type: 3}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 0}
