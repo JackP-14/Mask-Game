@@ -1299,8 +1299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc4c75f9eaf0f24a808729f7351aace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCMovement
-  checktime: 6
-  WalkChancePercent: 5
+  checktime: 2
+  WalkChancePercent: 50
+  Ymaxvariation: 0.1
+  Yspeed: 0.3
 --- !u!50 &3313410215694572282
 Rigidbody2D:
   serializedVersion: 5
