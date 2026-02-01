@@ -37,8 +37,10 @@ public class SequentialGlitchCycler : MonoBehaviour
     private bool enTransicion = false; // Para bloquear clicks mientras se anima
     private bool bucleFinalActivo = false; // Para saber si hemos llegado al final
 
+    private int updated_lives = 10;
     void Start()
     {
+        updated_lives = SaveData.Instance.lives;
         audioSource = GetComponent<AudioSource>();
 
         // Empezamos mostrando la primera imagen estática
@@ -51,8 +53,9 @@ public class SequentialGlitchCycler : MonoBehaviour
     void Update()
     {
         // Si hay click izquierdo Y NO estamos en mitad de una transición Y NO hemos llegado al final
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        if (updated_lives != SaveData.Instance.lives)
         {
+            updated_lives = SaveData.Instance.lives;
             if (!enTransicion && !bucleFinalActivo)
             {
                 StartCoroutine(HacerTransicion());
