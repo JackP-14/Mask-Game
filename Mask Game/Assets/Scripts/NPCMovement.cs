@@ -4,7 +4,7 @@ using System.Collections;
 public class NPCMovement : MonoBehaviour
 {
     int previousDirection;
-    bool walk_decision = false, bounce = false;
+    bool walk_decision = false, bounce = false, outOfBoundsY = false;
     float speed, initialY, Ymax, Ymin;
     int direction=-1, directionY = -1;
     
@@ -27,13 +27,25 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.y < Ymin || transform.position.y > Ymax)
+        {
+            outOfBoundsY = true;
+        }
+        if (outOfBoundsY && transform.position.y < initialY)
+        {
+            transform.position += new Vector3(0f, 0.01f, 0f);
+            directionY *= -1;
+            outOfBoundsY = false;
+        }
+        else if (outOfBoundsY && transform.position.y > initialY)
+        {
+            transform.position += new Vector3(0f, -0.01f, 0f);
+            directionY *= -1;
+            outOfBoundsY = false;
+        }
         if (walk_decision)
         {
             transform.position += new Vector3(speed * direction, 0f, 0f) * Time.deltaTime;
-        }
-        if (transform.position.y <= Ymin || transform.position.y >= Ymax)
-        {
-            directionY *= -1;
         }
         if (bounce)
         {
@@ -42,6 +54,7 @@ public class NPCMovement : MonoBehaviour
     }
     void walkQuestion()
     {
+        
         walk_decision = false;
         bounce = false;
         previousDirection = direction;
