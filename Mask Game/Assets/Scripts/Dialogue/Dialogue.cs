@@ -292,6 +292,214 @@
 // }
 
 
+// using System.Collections;
+// using UnityEngine;
+// using TMPro;
+// using UnityEngine.UI;
+// using UnityEngine.InputSystem;
+// using UnityEngine.SceneManagement;
+
+// public class DialogueSystemPro : MonoBehaviour
+// {
+//     [System.Serializable]
+//     public class LineaDeDialogo
+//     {
+//         [TextArea(3, 10)]
+//         public string texto;
+
+//         [Header("Visuales")]
+//         public Sprite imagenDeFondo; 
+//         public Sprite[] secuenciaAnimadaFondo; 
+//         [Range(0.01f, 0.5f)]
+//         public float velocidadAnimacion = 0.1f;
+
+//         [Header("Sonido Específico")]
+//         public AudioClip efectoDeSonido; 
+//     }
+
+//     [Header("Referencias OBLIGATORIAS")]
+//     public TextMeshProUGUI textComponent;
+//     public Image fondoPantalla;
+    
+//     // --- ESTO ES LO QUE FALTABA PARA QUE FUNCIONE ---
+//     [Tooltip("Arrastra aquí el objeto Canvas que tiene el script BlackScreenFade")]
+//     public BlackScreenFade pantallaNegraScript; 
+//     // ------------------------------------------------
+
+//     [Header("1. Audios de Fondo")]
+//     public AudioClip[] ambientesEnBucle; 
+
+//     [Header("2. Configuración del Diálogo")]
+//     public LineaDeDialogo[] lineasDelDialogo;
+//     public float textSpeed = 0.05f;
+
+//     // Variables internas
+//     private AudioSource sfxSource;
+//     private int index;
+//     private bool isTyping;
+//     private Coroutine animacionFondoActual;
+//     private bool dialogoTerminado = false; // Candado para no repetir acciones
+
+//     void Start()
+//     {
+//         // Setup de Audio
+//         sfxSource = gameObject.AddComponent<AudioSource>();
+//         if (ambientesEnBucle != null)
+//         {
+//             foreach (AudioClip clipAmbiente in ambientesEnBucle)
+//             {
+//                 if (clipAmbiente != null)
+//                 {
+//                     AudioSource ambienteSource = gameObject.AddComponent<AudioSource>();
+//                     ambienteSource.clip = clipAmbiente;
+//                     ambienteSource.loop = true;
+//                     ambienteSource.volume = 0.5f;
+//                     ambienteSource.Play();
+//                 }
+//             }
+//         }
+
+//         textComponent.text = string.Empty;
+//         StartDialogue();
+//     }
+
+//     void Update()
+//     {
+//         // Si el diálogo terminó, bloqueamos el click para que no intente pasar de línea
+//         if (dialogoTerminado) return;
+
+//         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+//         {
+//             if (!isTyping)
+//             {
+//                 NextLine();
+//             }
+//             else
+//             {
+//                 StopAllCoroutines();
+//                 if (animacionFondoActual == null) ActualizarFondo();
+//                 textComponent.text = lineasDelDialogo[index].texto;
+//                 isTyping = false;
+//             }
+//         }
+//     }
+
+//     void StartDialogue()
+//     {
+//         index = 0;
+//         ActualizarFondo();
+//         ReproducirEfectoTexto(); 
+//         StartCoroutine(TypeLine());
+//     }
+
+//     void ReproducirEfectoTexto()
+//     {
+//         if (lineasDelDialogo[index].efectoDeSonido != null)
+//         {
+//             sfxSource.PlayOneShot(lineasDelDialogo[index].efectoDeSonido);
+//         }
+//     }
+
+//     void ActualizarFondo()
+//     {
+//         if (animacionFondoActual != null)
+//         {
+//             StopCoroutine(animacionFondoActual);
+//             animacionFondoActual = null;
+//         }
+
+//         LineaDeDialogo lineaActual = lineasDelDialogo[index];
+
+//         if (lineaActual.secuenciaAnimadaFondo != null && lineaActual.secuenciaAnimadaFondo.Length > 0)
+//         {
+//             animacionFondoActual = StartCoroutine(AnimarFondoRoutine(lineaActual.secuenciaAnimadaFondo, lineaActual.velocidadAnimacion));
+//         }
+//         else if (lineaActual.imagenDeFondo != null)
+//         {
+//             fondoPantalla.sprite = lineaActual.imagenDeFondo;
+//         }
+//     }
+
+//     IEnumerator AnimarFondoRoutine(Sprite[] frames, float velocidad)
+//     {
+//         int frameIndex = 0;
+//         while (true)
+//         {
+//             fondoPantalla.sprite = frames[frameIndex];
+//             frameIndex = (frameIndex + 1) % frames.Length;
+//             yield return new WaitForSeconds(velocidad);
+//         }
+//     }
+
+//     IEnumerator TypeLine()
+//     {
+//         isTyping = true;
+//         textComponent.text = string.Empty;
+
+//         foreach (char c in lineasDelDialogo[index].texto.ToCharArray())
+//         {
+//             textComponent.text += c;
+//             yield return new WaitForSeconds(textSpeed);
+//         }
+//         isTyping = false;
+//     }
+
+//     void NextLine()
+//     {
+//         if (index < lineasDelDialogo.Length - 1)
+//         {
+//             index++;
+//             textComponent.text = string.Empty;
+//             ActualizarFondo();
+//             ReproducirEfectoTexto();
+//             StartCoroutine(TypeLine());
+//         }
+//         else
+//         {
+//             // AL TERMINAR EL DIÁLOGO, INICIAMOS LA SECUENCIA DE SALIDA
+//             StartCoroutine(TerminarYCambiarEscena());
+//         }
+//     }
+
+//     // --- AQUÍ ESTÁ LA SOLUCIÓN DEL FADE ---
+//     IEnumerator TerminarYCambiarEscena()
+//     {
+//         dialogoTerminado = true; // Bloqueamos inputs
+
+//         // 1. Decidimos a qué escena ir según donde estemos
+//         string escenaActual = SceneManager.GetActiveScene().name;
+//         string escenaDestino = "MainMenu"; // Por defecto, volvemos al menú
+
+//         if (escenaActual == "Introduction") 
+//         {
+//             escenaDestino = "Game";
+//         }
+//         else if (escenaActual == "EndgameBad" || escenaActual == "EndgameGood")
+//         {
+//             escenaDestino = "Credits";
+//         }
+//         else if (escenaActual == "Credits")
+//         {
+//             escenaDestino = "MainMenu"; // Aseguramos que Credits vaya a MainMenu
+//         }
+
+//         // 2. HACEMOS EL FADE OUT Y ESPERAMOS
+//         if (pantallaNegraScript != null)
+//         {
+//             // Llamamos a la función pública del otro script y esperamos a que acabe
+//             yield return StartCoroutine(pantallaNegraScript.HacerFadeDeTransparenteANegro());
+//         }
+//         else
+//         {
+//             Debug.LogError("¡OJO! No has asignado la 'Pantalla Negra Script' en el Inspector. Cambio brusco.");
+//         }
+
+//         // 3. CARGAMOS LA ESCENA
+//         SceneManager.LoadScene(escenaDestino);
+//     }
+// }
+
+
 using System.Collections;
 using UnityEngine;
 using TMPro;
@@ -321,10 +529,8 @@ public class DialogueSystemPro : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public Image fondoPantalla;
     
-    // --- ESTO ES LO QUE FALTABA PARA QUE FUNCIONE ---
     [Tooltip("Arrastra aquí el objeto Canvas que tiene el script BlackScreenFade")]
     public BlackScreenFade pantallaNegraScript; 
-    // ------------------------------------------------
 
     [Header("1. Audios de Fondo")]
     public AudioClip[] ambientesEnBucle; 
@@ -335,10 +541,11 @@ public class DialogueSystemPro : MonoBehaviour
 
     // Variables internas
     private AudioSource sfxSource;
-    private int index;
+    private int index; // Línea actual que estamos viendo
+    private int maxIndexReached; // La línea más avanzada a la que ha llegado el jugador
     private bool isTyping;
     private Coroutine animacionFondoActual;
-    private bool dialogoTerminado = false; // Candado para no repetir acciones
+    private bool dialogoTerminado = false;
 
     void Start()
     {
@@ -360,40 +567,128 @@ public class DialogueSystemPro : MonoBehaviour
         }
 
         textComponent.text = string.Empty;
-        StartDialogue();
+        index = 0;
+        maxIndexReached = 0; // Al empezar, estamos en la 0
+        MostrarLineaActual();
     }
 
     void Update()
     {
-        // Si el diálogo terminó, bloqueamos el click para que no intente pasar de línea
         if (dialogoTerminado) return;
 
+        // 1. INPUT DE CLICK (Avanzar)
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (!isTyping)
             {
-                NextLine();
+                // Solo avanzamos si estamos en la última línea alcanzada
+                if (index == maxIndexReached)
+                {
+                    NextLine();
+                }
+                else
+                {
+                    // Si estábamos revisando el historial y hacemos click,
+                    // volvemos instantáneamente al presente (Opcional, o avanzar 1 a 1)
+                    // Aquí lo configuro para avanzar 1 a 1 en el historial también:
+                    AvanzarEnHistorial();
+                }
             }
             else
             {
+                // Completar texto instantáneo
                 StopAllCoroutines();
                 if (animacionFondoActual == null) ActualizarFondo();
                 textComponent.text = lineasDelDialogo[index].texto;
                 isTyping = false;
             }
         }
+
+        // 2. INPUT DE RUEDA (Scroll)
+        if (Mouse.current != null)
+        {
+            float scroll = Mouse.current.scroll.y.ReadValue();
+
+            if (scroll > 0) // SCROLL UP -> IR ATRÁS
+            {
+                RetrocederEnHistorial();
+            }
+            else if (scroll < 0) // SCROLL DOWN -> IR ADELANTE
+            {
+                AvanzarEnHistorial();
+            }
+        }
     }
 
-    void StartDialogue()
+    // --- LÓGICA DE NAVEGACIÓN ---
+
+    void RetrocederEnHistorial()
     {
-        index = 0;
+        if (index > 0)
+        {
+            index--;
+            MostrarLineaActual();
+        }
+    }
+
+    void AvanzarEnHistorial()
+    {
+        // Solo podemos avanzar si NO estamos escribiendo y NO hemos llegado al final real
+        if (!isTyping)
+        {
+            // Si estamos revisando el pasado (index < maxIndexReached), avanzamos 1
+            if (index < maxIndexReached)
+            {
+                index++;
+                MostrarLineaActual();
+            }
+            // Si estamos en el presente, intentamos avanzar a una línea nueva
+            else if (index == maxIndexReached)
+            {
+                NextLine();
+            }
+        }
+    }
+
+    void NextLine()
+    {
+        if (index < lineasDelDialogo.Length - 1)
+        {
+            index++;
+            maxIndexReached = index; // ¡Actualizamos el progreso máximo!
+            MostrarLineaActual();
+        }
+        else
+        {
+            StartCoroutine(TerminarYCambiarEscena());
+        }
+    }
+
+    // --- FUNCIÓN CENTRAL PARA ACTUALIZAR TODO ---
+    void MostrarLineaActual()
+    {
+        // 1. Limpieza
+        StopAllCoroutines(); 
+        textComponent.text = string.Empty;
+        
+        // 2. Actualizar Visuales y Audio
         ActualizarFondo();
+        
+        // Solo reproducimos el sonido si estamos avanzando o es la primera vez,
+        // para que al hacer scroll rápido hacia atrás no suene todo de golpe.
+        // (O quita el 'if' si quieres que suene siempre)
         ReproducirEfectoTexto(); 
+
+        // 3. Escribir texto
         StartCoroutine(TypeLine());
     }
+    // -------------------------------------------
 
     void ReproducirEfectoTexto()
     {
+        // Detenemos el anterior para que no se solapen si haces scroll rápido
+        sfxSource.Stop(); 
+
         if (lineasDelDialogo[index].efectoDeSonido != null)
         {
             sfxSource.PlayOneShot(lineasDelDialogo[index].efectoDeSonido);
@@ -434,7 +729,16 @@ public class DialogueSystemPro : MonoBehaviour
     IEnumerator TypeLine()
     {
         isTyping = true;
-        textComponent.text = string.Empty;
+        
+        // Si quieres que al volver atrás el texto salga instantáneo (típico rollback),
+        // descomenta este bloque y comenta el foreach:
+        /*
+        if (index < maxIndexReached) {
+             textComponent.text = lineasDelDialogo[index].texto;
+             isTyping = false;
+             yield break;
+        }
+        */
 
         foreach (char c in lineasDelDialogo[index].texto.ToCharArray())
         {
@@ -444,57 +748,35 @@ public class DialogueSystemPro : MonoBehaviour
         isTyping = false;
     }
 
-    void NextLine()
-    {
-        if (index < lineasDelDialogo.Length - 1)
-        {
-            index++;
-            textComponent.text = string.Empty;
-            ActualizarFondo();
-            ReproducirEfectoTexto();
-            StartCoroutine(TypeLine());
-        }
-        else
-        {
-            // AL TERMINAR EL DIÁLOGO, INICIAMOS LA SECUENCIA DE SALIDA
-            StartCoroutine(TerminarYCambiarEscena());
-        }
-    }
-
-    // --- AQUÍ ESTÁ LA SOLUCIÓN DEL FADE ---
     IEnumerator TerminarYCambiarEscena()
     {
-        dialogoTerminado = true; // Bloqueamos inputs
+        dialogoTerminado = true; 
 
-        // 1. Decidimos a qué escena ir según donde estemos
         string escenaActual = SceneManager.GetActiveScene().name;
-        string escenaDestino = "MainMenu"; // Por defecto, volvemos al menú
+        string escenaDestino = "MainMenu"; 
 
         if (escenaActual == "Introduction") 
         {
             escenaDestino = "Game";
         }
-        else if (escenaActual == "EndgameBad" || escenaActual == "EndgameGood")
+        else if (escenaActual == "Game" || escenaActual == "EndgameBad" || escenaActual == "EndgameGood")
         {
             escenaDestino = "Credits";
         }
         else if (escenaActual == "Credits")
         {
-            escenaDestino = "MainMenu"; // Aseguramos que Credits vaya a MainMenu
+            escenaDestino = "MainMenu";
         }
 
-        // 2. HACEMOS EL FADE OUT Y ESPERAMOS
         if (pantallaNegraScript != null)
         {
-            // Llamamos a la función pública del otro script y esperamos a que acabe
             yield return StartCoroutine(pantallaNegraScript.HacerFadeDeTransparenteANegro());
         }
         else
         {
-            Debug.LogError("¡OJO! No has asignado la 'Pantalla Negra Script' en el Inspector. Cambio brusco.");
+            Debug.LogError("¡No has asignado la 'Pantalla Negra Script'!");
         }
 
-        // 3. CARGAMOS LA ESCENA
         SceneManager.LoadScene(escenaDestino);
     }
 }
