@@ -279,6 +279,9 @@ public class DialogueSystemPro : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "Introduction") {
                 SceneManager.LoadScene("Game");
+            // }
+            // else if (SceneManager.GetActiveScene().name == "EndgameBad" || SceneManager.GetActiveScene().name == "EndgameGood" ||) {
+            //     SceneManager.LoadScene("Credits");
             }
             else{
               SceneManager.LoadScene("Credits");  
