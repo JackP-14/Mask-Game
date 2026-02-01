@@ -1182,7 +1182,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lineasDelDialogo:
-  - texto: 'Masquerade: A game made by '
+  - texto: "Masquerade: A game made by \nA Group Of Individuals"
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
