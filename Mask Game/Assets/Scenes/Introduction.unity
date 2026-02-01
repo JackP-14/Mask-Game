@@ -312,43 +312,38 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d2095f88b09ff3240892e9be55b13de9, type: 3}
   - {fileID: 8300000, guid: f8fdba0bb43ecfe4698be457cd3e1b8d, type: 3}
   lineasDelDialogo:
-  - texto: "(Te levantas en una sala oscura y fr\xEDa. No recuerdas nada de lo ocurrido
-      en las \xFAltimas horas. Sientes un dolor de cabeza terrible, que te dificulta
-      mantenerte de pie.) "
+  - texto: (You wake up in a cold, dark room. You remember nothing of the last few
+      hours. A splitting headache makes it hard to even stay on your feet.)
     imagenDeFondo: {fileID: 6300654922055607269, guid: 78316ba5d8fe86b4f90ac4eddff90a1c, type: 3}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 0}
-  - texto: "(Escuchas una voz distante, acompa\xF1ada de un sonido mon\xF3tono de
-      est\xE1tica. Sumergido en lo desconocido, decides acercarte.) \r\n"
+  - texto: (You hear a distant voice, accompanied by the monotonous drone of static.
+      Surrounded by the unknown, you decide to approach it.)
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 0}
-  - texto: "(Posicionado deliberadamente, te encuentras un transmisor y le prestas
-      atenci\xF3n.)\r\n"
+  - texto: (You find a transmitter, deliberately placed there, and listen closely.)
     imagenDeFondo: {fileID: 8626480804542653998, guid: 4e09153a9d15d7c46ba5c5da8bc5a994, type: 3}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 8300000, guid: fe8f8eab5c8ce3545b3a1bf6f494fa1e, type: 3}
-  - texto: "*Zumbando* Una bala, un objetivo, una oportunidad. Busca patrones, pide
-      ayuda, aunque ser\xE1 a cambio de un precio. Por cada pregunta err\xF3nea,
-      tu compa\xF1ero pagar\xE1 por ello. Una bala, un objetivo, una oportunidad,
-      no la desperdicies. \r\n"
+  - texto: '*Buzzing* One bullet, one target, one chance. Look for patterns, ask
+      for help, though it comes at a price. For every wrong question, your partner
+      will pay. One bullet, one target, one chance. Don''t waste it.'
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 0}
-  - texto: '(Al principio muestras rechazo, pero ante el terror de lo que pueda pasar,
-      accedes a hacer de marioneta.)
-
-'
+  - texto: (At first you hesitate, but faced with the terror of what might happen,
+      you agree to play the puppet.)
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1
     efectoDeSonido: {fileID: 0}
-  - texto: "(Al otro lado de la sala, luz filtr\xE1ndose entre las grandes puertas
-      te ciega temporalmente, y carg\xE1ndote de valor, las atraviesas.)"
+  - texto: (Across the room, light filtering through large doors blinds you momentarily.
+      Gathering your courage, you walk through them.)
     imagenDeFondo: {fileID: 4644470822545240714, guid: c99cd363dfd5b0342b842f66b254f49c, type: 3}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.1

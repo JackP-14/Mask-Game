@@ -251,17 +251,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lineasDelDialogo:
-  - texto: "(\xBFC\xF3mo he acabado aqu\xED?)"
+  - texto: (How did I end up here?)
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.01
     efectoDeSonido: {fileID: 0}
-  - texto: "(\xBFC\xF3mo he acabado siendo c\xF3mplice de este hecho?)\r\n"
+  - texto: '(How did I become an accomplice to this?)
+
+'
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
     efectoDeSonido: {fileID: 0}
-  - texto: "*Habl\xE1ndole al transmisor* Ya esta hecho.\r\n"
+  - texto: "*Speaking into the transmitter*\n It's done."
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0
@@ -280,12 +282,28 @@ MonoBehaviour:
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.01
     efectoDeSonido: {fileID: 0}
-  - texto: "\xA1Decid algo!\r\n"
+  - texto: 'Say something!
+
+'
     imagenDeFondo: {fileID: 0}
     secuenciaAnimadaFondo: []
     velocidadAnimacion: 0.01
     efectoDeSonido: {fileID: 0}
   - texto: '(...)
+
+'
+    imagenDeFondo: {fileID: 0}
+    secuenciaAnimadaFondo: []
+    velocidadAnimacion: 0.01
+    efectoDeSonido: {fileID: 0}
+  - texto: '(...)
+
+'
+    imagenDeFondo: {fileID: 0}
+    secuenciaAnimadaFondo: []
+    velocidadAnimacion: 0.01
+    efectoDeSonido: {fileID: 0}
+  - texto: '(..................)
 
 '
     imagenDeFondo: {fileID: 0}
