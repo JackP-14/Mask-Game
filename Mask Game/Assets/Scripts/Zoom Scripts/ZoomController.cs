@@ -1,55 +1,71 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
+
 
 public class ZoomController : MonoBehaviour
 {
     public Camera MainCam;
     public Transform Crosshair;
     public GameObject Zoom0Wall;
-    public SpriteRenderer wall_spriteRenderer;
     public GameObject Zoom2CameraController;
+    public GameObject Zoom0_Base;
+    public static bool Zoom_Q = false;
     public static bool Zoom0 = true;
     public static bool Zoom1 = false;
     public static bool Zoom2 = false;
-    [Header("Hud and Fade Out")]
+    
+    [Header("Hud and Elements")]
     public GameObject hud;
-    //public SpriteRenderer hud_spriteRenderer;
+    public class hud_elements
+    {
+        public GameObject background;
+        public GameObject radio;
+        public GameObject PC;
+        public GameObject notebook;
+        public GameObject textbox;
+    }
     public GameObject cross;
     public float fadeDuration = 1.0f;
+    [Header("Audio Clip")]
+    public AudioClip soundToPlay;
+    private AudioSource audioSource;
     void Start()
     {
-        //hud_spriteRenderer = hud.GetComponent<SpriteRenderer>();
-        //wall_spriteRenderer = Zoom0Wall.GetComponent<SpriteRenderer>();
+        
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
-        //Vector3 mousePos = Mouse.current.position.ReadValue();
-        //Vector3 worldPos = MainCam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, MainCam.nearClipPlane));
-        //worldPos.z = -10f;
-        //Debug.Log($"Cursor en pantalla: {mousePos} | Cursor en mundo: {worldPos}");
         if (Keyboard.current != null &&
         Keyboard.current.wKey.wasPressedThisFrame)
         {
-            if (Zoom0 == true && Zoom1 == false)
+            if (Zoom2) return;
+            if (!Zoom_Q)
+            {
+                audioSource.PlayOneShot(soundToPlay);
+            }
+            if (Zoom_Q)
+            {
+                Debug.Log("Zoom0 On");
+                Zoom_Q = false;
+                Zoom0 = true;
+                hud.SetActive(false);
+                Zoom0_Base.SetActive(true);
+            }
+            else if (Zoom0 && !Zoom1)
             {
                 Zoom1 = true;
                 Zoom0 = false;
-                Debug.Log("Zoom0 Off");
                 Debug.Log("Zoom1 On");
+                Zoom0_Base.SetActive(false);
                 Zoom0Wall.SetActive(false);
-                //FadeOut(wall_spriteRenderer, Zoom0Wall, fadeDuration);
-                hud.SetActive(false);
                 cross.SetActive(true);
-
             }
             else if (Zoom0 == false && Zoom1 == true)
             {
                 Zoom1 = false;
                 Zoom2 = true;
-                Debug.Log("Zoom1 Off");
                 Debug.Log("Zoom2 On");
-                hud.SetActive(false);
                 cross.SetActive(true);
 
                 Crosshair.localScale = Crosshair.localScale / 5;
@@ -62,7 +78,7 @@ public class ZoomController : MonoBehaviour
 
                 // Move camera to where the cursor was
                 MainCam.transform.position = mouseWorldPos;
-                Crosshair.position = mouseWorldPos; 
+                Crosshair.position = mouseWorldPos;
                 Zoom2CameraController.SetActive(true);
             }
 
@@ -70,20 +86,26 @@ public class ZoomController : MonoBehaviour
         if (Keyboard.current != null &&
         Keyboard.current.sKey.wasPressedThisFrame)
         {
-            if (Zoom1 == true && Zoom0 == false)
+            if (Zoom_Q) return;
+            if (!Zoom0)
+            {
+                audioSource.PlayOneShot(soundToPlay);
+            }
+            if (Zoom0 && !Zoom_Q)
+            {
+                Zoom0 = false;
+                Zoom_Q = true;
+                hud.SetActive(true);
+                Zoom0_Base.SetActive(false);
+            }
+            else if (Zoom1 && !Zoom0)
             {
                 Zoom0 = true;
                 Zoom1 = false;
-                Debug.Log("Zoom1 Off");
                 Debug.Log("Zoom0 On");
                 Zoom0Wall.SetActive(true);
-                { 
-                //Color color = wall_spriteRenderer.color;
-                //wall_spriteRenderer.color = new Color(color.r, color.g, color.b, 1f);
-                }
-                hud.SetActive(true);
+                Zoom0_Base.SetActive(true);
                 cross.SetActive(false);
-
             }
             else if (Zoom1 == false && Zoom2 == true)
             {
@@ -101,26 +123,6 @@ public class ZoomController : MonoBehaviour
         }
 
     }
-    public void FadeOut(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration = 1f)
-    {
-        StartCoroutine(FadeOutCoroutine(spriteRenderer, targetObject, fadeDuration));
-    }
 
-    private IEnumerator FadeOutCoroutine(SpriteRenderer spriteRenderer, GameObject targetObject, float fadeDuration)
-    {
-        float elapsed = 0f;
-        Color color = spriteRenderer.color;
-
-        while (elapsed < fadeDuration)
-        {
-            elapsed += Time.deltaTime;
-            float alpha = 1f - (elapsed / fadeDuration);
-            spriteRenderer.color = new Color(color.r, color.g, color.b, alpha);
-            yield return null;
-        }
-
-        spriteRenderer.color = new Color(color.r, color.g, color.b, 0f);
-        targetObject.SetActive(false);
-    }
 }
 
