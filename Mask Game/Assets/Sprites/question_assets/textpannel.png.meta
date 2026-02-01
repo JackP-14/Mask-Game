@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 820e3c09e390f5545ae84148d83bca62
+guid: 6b21f7d8ccba5ee40ad199da1f0893e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7191406151884937969
-    second: pillar_only_0
-  - first:
-      213: -8257946309085212492
-    second: pillar_only_1
+      213: -7201829255653854781
+    second: textpannel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pillar_only_0
+      name: textpannel_0
       rect:
         serializedVersion: 2
-        x: 416
+        x: 0
         y: 0
-        width: 673
+        width: 3508
         height: 2480
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fa19ae1bc10dc360800000000000000
-      internalID: 7191406151884937969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pillar_only_1
-      rect:
-        serializedVersion: 2
-        x: 1185
-        y: 337
-        width: 6
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b05ab89591e56d80800000000000000
-      internalID: -8257946309085212492
+      spriteID: 3c17cbbe276fd0c90800000000000000
+      internalID: -7201829255653854781
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pillar_only_0: 7191406151884937969
-      pillar_only_1: -8257946309085212492
+      textpannel_0: -7201829255653854781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
